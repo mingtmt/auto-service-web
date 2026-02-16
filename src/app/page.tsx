@@ -1,6 +1,6 @@
 import HeroSlider from "@/components/home/HeroSlider";
 import ServiceGrid from "@/components/home/ServiceGrid";
-// import WhyChooseUs from '@/components/home/WhyChooseUs';
+import WhyChooseUs from '@/components/home/WhyChooseUs';
 // import CTASection from '@/components/home/CTASection';
 
 export default function Home() {
@@ -20,9 +20,9 @@ export default function Home() {
         <ServiceGrid />
       </div>
 
-      {/* <WhyChooseUs />
+      <WhyChooseUs />
       
-      <CTASection /> */}
+      {/* <CTASection /> */}
     </div>
   );
 }

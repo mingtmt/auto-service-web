@@ -1,4 +1,4 @@
-import { Car, PaintBucket, ShieldCheck, Wrench } from "lucide-react";
+import { Car, PaintBucket, ShieldCheck, Wrench, Award, Users, SearchCheck, PiggyBank, HeartHandshake } from "lucide-react";
 
 export const MENU_ITEMS = [
   { label: "Trang chủ", href: "/" },
@@ -45,8 +45,61 @@ export const SERVICES = [
 ];
 
 export const CONTACT_INFO = {
-  phone: "0934 22 27 63",
-  hotline: "0934 79 71 79",
+  phone: "0987 xx xx xx",
+  hotline: "0987 xx xx xx",
   email: "khoado@anhkhoaauto.com",
   address: "68B Nguyễn Hữu Thọ, Tân Hưng, Q.7, TP.HCM",
 };
+
+export const WHY_CHOOSE_US = [
+  {
+    icon: Users,
+    title: 'Đội Ngũ Chuyên Nghiệp',
+    description: 'Kỹ thuật viên tay nghề cao, được đào tạo bài bản từ các trường ĐH/CĐ uy tín.',
+  },
+  {
+    icon: SearchCheck,
+    title: 'Trung Thực & Minh Bạch',
+    description: 'Tư vấn đúng bệnh, báo đúng giá. Khách hàng có thể trực tiếp quan sát quy trình.',
+  },
+  {
+    icon: Award,
+    title: 'Phụ Tùng Chính Hãng',
+    description: 'Cam kết phụ tùng nguồn gốc rõ ràng, nói không với hàng giả/kém chất lượng.',
+  },
+  {
+    icon: PiggyBank,
+    title: 'Chi Phí Tối Ưu',
+    description: 'Giải pháp sửa chữa tiết kiệm, hiệu quả nhất cho từng dòng xe và tình trạng thực tế.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Bảo Hành Uy Tín',
+    description: 'Chính sách bảo hành dài hạn, trách nhiệm cao sau khi bàn giao xe.',
+  },
+  {
+    icon: HeartHandshake,
+    title: 'Tận Tâm Phục Vụ',
+    description: 'Chăm sóc xe như người thân, hỗ trợ cứu hộ 24/7 khi khách hàng cần.',
+  },
+];
+
+export const FOOTER_LINKS = [
+  { label: 'Về Anh Khoa Auto', href: '/ve-chung-toi' },
+  { label: 'Tuyển dụng', href: '/tuyen-dung' },
+  { label: 'Tin tức & Sự kiện', href: '/tin-tuc' },
+  { label: 'Chính sách bảo mật', href: '/chinh-sach' },
+];
+
+export const BRANCHES = [
+  {
+    name: 'Trụ Sở Chính (Quận 7)',
+    address: '68B Nguyễn Hữu Thọ, Phường Tân Hưng, Quận 7, TP.HCM',
+    mapLink: 'https://maps.google.com/?q=68B+Nguyễn+Hữu+Thọ+Quận+7',
+  },
+  {
+    name: 'Chi Nhánh 1 (Nhà Bè)',
+    address: '1260 Lê Văn Lương, Xã Phước Kiển, Huyện Nhà Bè, TP.HCM',
+    mapLink: 'https://maps.google.com/?q=1260+Lê+Văn+Lương+Nhà+Bè',
+  },
+];
