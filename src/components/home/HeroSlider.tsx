@@ -28,18 +28,18 @@ export default function HeroSlider() {
             Chăm Sóc & Bảo Dưỡng <br /> Ô Tô Chuyên Nghiệp
           </h1>
           <p className="text-lg md:text-xl text-gray-200">
-            Thanh Phong Auto mang đến giải pháp toàn diện cho xế yêu của bạn với
+            Anh Khoa Auto mang đến giải pháp toàn diện cho xế yêu của bạn với
             đội ngũ kỹ thuật viên giàu kinh nghiệm.
           </p>
           <div className="flex gap-4 pt-4">
             <Link
-              href="/dich-vu"
+              href="/services"
               className="bg-brand-red hover:bg-red-700 text-white px-8 py-3 rounded font-bold transition"
             >
               Xem Dịch Vụ
             </Link>
             <Link
-              href="/lien-he"
+              href="/contact"
               className="bg-white hover:bg-gray-100 text-brand-dark px-8 py-3 rounded font-bold transition"
             >
               Liên Hệ Ngay

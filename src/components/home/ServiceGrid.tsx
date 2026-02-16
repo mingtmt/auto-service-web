@@ -31,9 +31,10 @@ export default function ServiceGrid() {
             </h3>
             <p className="text-gray-600 mb-4 text-sm line-clamp-2">
               {service.description}
-            </p>
+            </p>s
             <Link
-              href={`/dich-vu/${service.id}`}
+              key={service.slug}
+              href={`/services/${service.slug}`}
               className="inline-flex items-center text-brand-red font-semibold text-sm hover:underline"
             >
               Xem chi tiết <ArrowRight size={16} className="ml-1" />
