@@ -12,6 +12,7 @@
   "dependencies": {
     "@portabletext/react": "^6.0.2",
     "@sanity/image-url": "^1.2.0",
+    "@sanity/table": "^2.0.1",
     "@sanity/vision": "^4.22.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.564.0",

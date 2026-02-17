@@ -35,6 +35,32 @@ const ptComponents = {
         </figure>
       );
     },
+
+    table: ({ value }: any) => {
+      return (
+        <div className="my-8 overflow-x-auto">
+          <table className="min-w-full border-collapse border border-gray-300 bg-white text-sm shadow-sm">
+            <tbody>
+              {value.rows.map((row: any, rowIndex: number) => (
+                <tr 
+                  key={row._key || rowIndex}
+                  className={rowIndex === 0 ? "bg-brand-red/10 font-bold" : "hover:bg-gray-50"}
+                >
+                  {row.cells.map((cell: string, cellIndex: number) => (
+                    <td 
+                      key={cellIndex} 
+                      className="border border-gray-300 px-4 py-3 text-gray-700"
+                    >
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    },
   },
 
   block: {

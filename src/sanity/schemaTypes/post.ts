@@ -61,7 +61,8 @@ export const postType = defineType({
               title: 'Chú thích ảnh (Hiển thị dưới ảnh)',
             }
           ]
-        }
+        },
+        { type: 'table' }
       ],
     }),
     defineField({
