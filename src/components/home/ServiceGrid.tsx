@@ -31,7 +31,7 @@ export default function ServiceGrid() {
             </h3>
             <p className="text-gray-600 mb-4 text-sm line-clamp-2">
               {service.description}
-            </p>s
+            </p>
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}

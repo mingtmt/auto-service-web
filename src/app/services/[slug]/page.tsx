@@ -1,126 +1,115 @@
-import { SERVICES, BLOG_POSTS } from '@/lib/data';
-import ServiceSidebar from '@/components/service/ServiceSidebar';
+import { getPostBySlug } from '@/sanity/lib/queries';
+import { urlFor } from '@/sanity/lib/image';
+import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
-import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { ChevronRight, Calendar, User, ArrowRight } from 'lucide-react';
+import { notFound } from 'next/navigation';
+import { ChevronRight, Calendar, User, Clock, ArrowLeft } from 'lucide-react';
+import ServiceSidebar from '@/components/service/ServiceSidebar';
 
-export async function generateStaticParams() {
-  return SERVICES.filter((s) => s.slug).map((service) => ({
-    slug: service.slug,
-  }));
-}
+const ptComponents = {
+  types: {
+    image: ({ value }: any) => {
+      if (!value?.asset?._ref) {
+        return null;
+      }
+      
+      return (
+        <figure className="my-10">
+          <div className="relative w-full h-auto rounded-xl overflow-hidden shadow-md">
+            <Image
+              src={urlFor(value).width(800).fit('max').auto('format').url()}
+              alt={value.alt || 'Ảnh minh họa bài viết'}
+              width={800}
+              height={500}
+              className="w-full h-auto object-cover" 
+            />
+          </div>
+          
+          {/* Caption */}
+          {value.caption && (
+            <figcaption className="text-center text-sm text-gray-500 mt-3 italic bg-gray-50 py-2 rounded">
+              {value.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
+    },
+  },
 
-export default async function ServiceDetailPage({
+  block: {
+    h2: ({children}: any) => <h2 className="text-2xl font-bold mt-8 mb-4 text-brand-dark border-l-4 border-brand-red pl-3">{children}</h2>,
+    h3: ({children}: any) => <h3 className="text-xl font-bold mt-6 mb-3 text-brand-red">{children}</h3>,
+    normal: ({children}: any) => <p className="mb-4 text-gray-700 leading-relaxed text-lg">{children}</p>,
+    blockquote: ({children}: any) => <blockquote className="border-l-4 border-gray-300 pl-4 italic text-gray-600 my-6">{children}</blockquote>,
+  },
+  
+  list: {
+    bullet: ({children}: any) => <ul className="list-disc ml-6 mb-6 space-y-2 text-gray-700">{children}</ul>,
+    number: ({children}: any) => <ol className="list-decimal ml-6 mb-6 space-y-2 text-gray-700">{children}</ol>,
+  },
+};
+
+export default async function BlogPostPage({
   params
 }: {
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params;
-  
-  const service = SERVICES.find((s) => s.slug === slug);
+  const post = await getPostBySlug(slug);
 
-  const relatedPosts = BLOG_POSTS.filter((post) => post.serviceSlug === slug);
-
-  if (!service) {
-    notFound();
-  }
+  if (!post) return notFound();
 
   return (
-    <div className="bg-white pb-20">
-      <div className="relative h-[300px] bg-gray-900 flex items-center justify-center">
-        <Image
-          src={service.image}
-          alt={service.title}
-          fill
-          className="object-cover opacity-30"
-          priority
-        />
-        <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 uppercase">{service.title}</h1>
-          <div className="flex items-center justify-center gap-2 text-sm text-gray-300">
-            <Link href="/" className="hover:text-white">Trang chủ</Link>
-            <ChevronRight size={14} />
-            <span className="text-brand-red font-semibold">Kiến thức {service.title}</span>
-          </div>
+    <div className="bg-white pb-20 pt-8">
+      <div className="container mx-auto px-4">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm text-gray-500 mb-8">
+          <Link href="/" className="hover:text-brand-red">Trang chủ</Link>
+          <ChevronRight size={14} />
+          <Link href="/services" className="hover:text-brand-red">Dịch vụ</Link>
+          <ChevronRight size={14} />
+          <span className="text-brand-dark font-medium truncate max-w-[200px]">{post.title}</span>
         </div>
-      </div>
 
-      <div className="container mx-auto px-4 py-12">
         <div className="flex flex-col lg:flex-row gap-12">
-          
-          {/* --- List of posts --- */}
+          {/* Content */}
           <div className="lg:w-2/3">
-            
-            {/* Introduce the service */}
-            <div className="mb-10 bg-gray-50 p-6 rounded-lg border-l-4 border-brand-red">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Tổng quan</h2>
-                <p className="text-gray-600">{service.description}</p>
-            </div>
+             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                {post.title}
+             </h1>
 
-            {/* Related posts */}
-            <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-              <span className="w-2 h-8 bg-brand-red rounded-sm"></span>
-              Bài Viết Chuyên Đề
-            </h3>
+             <div className="flex items-center gap-6 text-gray-500 text-sm mb-8 border-b border-gray-100 pb-6">
+                <span className="flex items-center gap-2">
+                    <Calendar size={16} /> {new Date(post.publishedAt).toLocaleDateString('vi-VN')}
+                </span>
+                <span className="flex items-center gap-2"><User size={16} /> {post.author}</span>
+             </div>
 
-            {relatedPosts.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {relatedPosts.map((post) => (
-                  <Link 
-                    key={post.id} 
-                    href={`/blog/${post.slug}`}
-                    className="group flex flex-col bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
-                  >
-                    {/* Image */}
-                    <div className="relative h-48 overflow-hidden">
-                      <Image 
-                        src={post.image} 
-                        alt={post.title} 
-                        fill 
-                        className="object-cover group-hover:scale-110 transition-transform duration-500" 
-                      />
-                      <div className="absolute top-3 right-3 bg-brand-red text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
-                        Mới
-                      </div>
+             {/*  */}
+             <div className="prose prose-lg max-w-none text-gray-700">
+                {/* Thumbnail */}
+                {post.mainImage && (
+                    <div className="relative w-full h-[400px] rounded-xl overflow-hidden mb-8">
+                        <Image src={urlFor(post.mainImage).url()} alt={post.title} fill className="object-cover" />
                     </div>
+                )}
+                
+                <PortableText value={post.content} components={ptComponents} />
+             </div>
 
-                    {/* Content */}
-                    <div className="p-5 flex flex-col flex-grow">
-                      <div className="flex items-center gap-4 text-xs text-gray-400 mb-3">
-                        <span className="flex items-center gap-1"><Calendar size={12} /> {post.date}</span>
-                        <span className="flex items-center gap-1"><User size={12} /> {post.author}</span>
-                      </div>
-                      
-                      <h4 className="text-lg font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-brand-red transition-colors">
-                        {post.title}
-                      </h4>
-                      
-                      <p className="text-gray-500 text-sm line-clamp-3 mb-4 flex-grow">
-                        {post.excerpt}
-                      </p>
-
-                      <span className="inline-flex items-center text-brand-red text-sm font-semibold group-hover:translate-x-2 transition-transform">
-                        Đọc tiếp <ArrowRight size={16} className="ml-1" />
-                      </span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            ) : (
-              // If there are no posts, show a message
-              <div className="text-center py-12 bg-gray-50 rounded-xl border border-dashed border-gray-300">
-                <p className="text-gray-500">Hiện chưa có bài viết nào cho chuyên mục này.</p>
-                <p className="text-sm text-gray-400 mt-1">Vui lòng quay lại sau.</p>
-              </div>
-            )}
+             {/* Footer */}
+             <div className="mt-12 pt-8 border-t border-gray-100">
+                <Link href="/services" className="inline-flex items-center text-gray-600 hover:text-brand-red font-medium transition">
+                    <ArrowLeft size={18} className="mr-2" /> Quay lại danh sách bài viết
+                </Link>
+             </div>
           </div>
 
-          {/* --- SIDEBAR --- */}
+          {/* Sidebar */}
           <div className="lg:w-1/3">
-            <ServiceSidebar currentSlug={slug} />
+             <ServiceSidebar currentSlug={post.serviceSlug} />
           </div>
-
         </div>
       </div>
     </div>

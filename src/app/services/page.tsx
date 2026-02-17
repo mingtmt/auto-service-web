@@ -1,14 +1,18 @@
-import { BLOG_POSTS, SERVICES } from '@/lib/data';
+import { SERVICES } from '@/lib/data';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronRight, Calendar, User, ArrowRight, Tag } from 'lucide-react';
+import { getAllPosts } from '@/sanity/lib/queries';
+import { urlFor } from '@/sanity/lib/image';
 
 export const metadata = {
   title: 'Kiến Thức & Dịch Vụ | Anh Khoa Auto',
   description: 'Tổng hợp các bài viết chuyên sâu về bảo dưỡng, sửa chữa và chăm sóc xe ô tô.',
 };
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const posts = await getAllPosts();
+
   return (
     <div className="bg-gray-50 pb-20">
       <div className="relative h-[300px] bg-brand-dark flex items-center justify-center">
@@ -28,7 +32,7 @@ export default function ServicesPage() {
         {/* All categories */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
             <Link 
-                href="/dich-vu" 
+                href="/services" 
                 className="px-6 py-2 rounded-full bg-brand-red text-white font-semibold shadow-md ring-2 ring-brand-red ring-offset-2"
             >
                 Tất cả
@@ -36,7 +40,7 @@ export default function ServicesPage() {
             {SERVICES.map((service) => (
                 <Link
                     key={service.id}
-                    href={`/dich-vu/${service.slug}`}
+                    href={`/services/${service.slug}`}
                     className="px-6 py-2 rounded-full bg-white text-gray-600 font-medium hover:bg-gray-100 hover:text-brand-red transition shadow-sm border border-gray-200"
                 >
                     {service.title}
@@ -46,24 +50,24 @@ export default function ServicesPage() {
 
         {/* All posts */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {BLOG_POSTS.map((post) => {
+          {posts.map((post) => {
             const parentService = SERVICES.find(s => s.slug === post.serviceSlug);
 
             return (
               <Link 
-                key={post.id} 
-                href={`/blog/${post.slug}`}
+                key={post._id} 
+                href={`/services/${post.slug.current}`} 
                 className="group flex flex-col bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100"
               >
-                {/* Image */}
-                <div className="relative h-56 overflow-hidden">
-                  <Image 
-                    src={post.image} 
-                    alt={post.title} 
-                    fill 
-                    className="object-cover group-hover:scale-110 transition-transform duration-500" 
-                  />
-                  {/* Service Badge */}
+                <div className="relative h-56 overflow-hidden bg-gray-200">
+                  {post.mainImage && (
+                    <Image 
+                      src={urlFor(post.mainImage).url()}
+                      alt={post.title} 
+                      fill 
+                      className="object-cover group-hover:scale-110 transition-transform duration-500" 
+                    />
+                  )}
                   {parentService && (
                     <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded flex items-center gap-1">
                         <Tag size={12} /> {parentService.title}
@@ -71,10 +75,12 @@ export default function ServicesPage() {
                   )}
                 </div>
 
-                {/* Content */}
                 <div className="p-6 flex flex-col flex-grow">
                   <div className="flex items-center justify-between text-xs text-gray-400 mb-3">
-                    <span className="flex items-center gap-1"><Calendar size={14} /> {post.date}</span>
+                    <span className="flex items-center gap-1">
+                        <Calendar size={14} /> 
+                        {new Date(post.publishedAt).toLocaleDateString('vi-VN')}
+                    </span>
                     <span className="flex items-center gap-1"><User size={14} /> {post.author}</span>
                   </div>
                   
