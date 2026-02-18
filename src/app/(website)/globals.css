@@ -31,3 +31,7 @@ h1 {
 h2 {
   @apply text-xl font-bold;
 }
+
+html {
+  scroll-behavior: smooth;
+}

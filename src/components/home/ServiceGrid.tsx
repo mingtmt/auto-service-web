@@ -34,7 +34,7 @@ export default function ServiceGrid() {
             </p>
             <Link
               key={service.slug}
-              href={`/services/${service.slug}`}
+              href={`/services?category=${service.slug}`}
               className="inline-flex items-center text-brand-red font-semibold text-sm hover:underline"
             >
               Xem chi tiết <ArrowRight size={16} className="ml-1" />

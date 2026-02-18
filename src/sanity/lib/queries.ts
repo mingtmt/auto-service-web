@@ -6,7 +6,7 @@ export interface Post {
   title: string;
   slug: { current: string };
   mainImage: any;
-  excerpt: string;
+  excerpt: any;
   serviceSlug: string;
   author: string;
   publishedAt: string;
@@ -20,11 +20,11 @@ export async function getAllPosts(): Promise<Post[]> {
       title,
       slug,
       mainImage,
-      excerpt,
+      "excerpt": pt::text(excerpt),
       serviceSlug,
       author,
       publishedAt
-    }`
+    }`,
   );
 }
 
@@ -39,7 +39,7 @@ export async function getPostsByService(serviceSlug: string): Promise<Post[]> {
       author,
       publishedAt
     }`,
-    { serviceSlug }
+    { serviceSlug },
   );
 }
 
@@ -55,6 +55,6 @@ export async function getPostBySlug(slug: string): Promise<Post> {
       publishedAt,
       content
     }`,
-    { slug }
+    { slug },
   );
 }

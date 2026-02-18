@@ -1,8 +1,16 @@
 "use client";
 
-import { Clock, MapPin, Menu, Phone, Search, ChevronRight, X } from "lucide-react";
+import {
+  Clock,
+  MapPin,
+  Menu,
+  Phone,
+  Search,
+  ChevronRight,
+  X,
+} from "lucide-react";
 import Link from "next/link";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { CONTACT_INFO, MENU_ITEMS } from "@/lib/data";
 import { cn } from "@/lib/utils";
@@ -24,9 +32,9 @@ export default function Header() {
 
   useEffect(() => {
     if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
   }, [mobileMenuOpen]);
 
@@ -98,7 +106,7 @@ export default function Header() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             onClick={() => setMobileMenuOpen(true)}
             className="lg:hidden p-2 text-gray-700"
           >
@@ -108,30 +116,34 @@ export default function Header() {
       </header>
 
       {/* Mobile Menu Drawer */}
-      <div className={cn(
-        "fixed inset-0 z-[60] lg:hidden transition-all duration-300",
-        mobileMenuOpen ? "visible" : "invisible pointer-events-none"
-      )}>
-        
+      <div
+        className={cn(
+          "fixed inset-0 z-[60] lg:hidden transition-all duration-300",
+          mobileMenuOpen ? "visible" : "invisible pointer-events-none",
+        )}
+      >
         {/* Overlay */}
-        <div 
+        <div
           className={cn(
             "absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300",
-            mobileMenuOpen ? "opacity-100" : "opacity-0"
+            mobileMenuOpen ? "opacity-100" : "opacity-0",
           )}
           onClick={() => setMobileMenuOpen(false)} // click out to close
         />
 
         {/* Drawer Content */}
-        <div className={cn(
-          "absolute top-0 right-0 bottom-0 w-[85%] max-w-[320px] bg-white shadow-2xl transition-transform duration-300 ease-out flex flex-col",
-          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        )}>
-          
+        <div
+          className={cn(
+            "absolute top-0 right-0 bottom-0 w-[85%] max-w-[320px] bg-white shadow-2xl transition-transform duration-300 ease-out flex flex-col",
+            mobileMenuOpen ? "translate-x-0" : "translate-x-full",
+          )}
+        >
           {/* Header */}
           <div className="flex items-center justify-between p-5 border-b border-gray-100 bg-gray-50">
-            <span className="font-bold text-lg text-brand-dark uppercase">Menu</span>
-            <button 
+            <span className="font-bold text-lg text-brand-dark uppercase">
+              Menu
+            </span>
+            <button
               onClick={() => setMobileMenuOpen(false)}
               className="p-2 text-gray-500 hover:text-red-500 hover:bg-red-50 rounded-full transition"
             >
@@ -148,24 +160,29 @@ export default function Header() {
                   href={item.href}
                   className={cn(
                     "flex items-center justify-between px-4 py-3 rounded-lg text-base font-medium transition-colors",
-                    pathname === item.href 
-                      ? "bg-red-50 text-brand-red" 
-                      : "text-gray-700 hover:bg-gray-50 hover:text-brand-red"
+                    pathname === item.href
+                      ? "bg-red-50 text-brand-red"
+                      : "text-gray-700 hover:bg-gray-50 hover:text-brand-red",
                   )}
                 >
                   {item.label}
-                  <ChevronRight size={16} className={cn(
-                    "transition-transform",
-                    pathname === item.href ? "text-brand-red" : "text-gray-300"
-                  )} />
+                  <ChevronRight
+                    size={16}
+                    className={cn(
+                      "transition-transform",
+                      pathname === item.href
+                        ? "text-brand-red"
+                        : "text-gray-300",
+                    )}
+                  />
                 </Link>
               ))}
             </nav>
-            
+
             {/* Action Buttons in Mobile Menu */}
             <div className="mt-6 px-6 space-y-3">
-              <Link 
-                href="/schedule" 
+              <Link
+                href="/schedule"
                 className="flex items-center justify-center w-full bg-brand-red text-white py-3 rounded-lg font-bold shadow hover:bg-red-700 transition"
               >
                 Đặt Lịch Ngay
@@ -184,16 +201,23 @@ export default function Header() {
               </div>
               <div>
                 <p className="text-xs text-gray-500">Hotline tư vấn</p>
-                <a href={`tel:${CONTACT_INFO.hotline.replace(/\s/g, '')}`} className="font-bold text-gray-900">{CONTACT_INFO.hotline}</a>
+                <a
+                  href={`tel:${CONTACT_INFO.hotline.replace(/\s/g, "")}`}
+                  className="font-bold text-gray-900"
+                >
+                  {CONTACT_INFO.hotline}
+                </a>
               </div>
             </div>
-             <div className="flex items-start gap-3">
+            <div className="flex items-start gap-3">
               <div className="w-8 h-8 rounded-full bg-brand-red/10 flex items-center justify-center text-brand-red shrink-0">
                 <Clock size={16} />
               </div>
               <div>
                 <p className="text-xs text-gray-500">Giờ làm việc</p>
-                <p className="font-medium text-gray-900">8:00 - 17:30 (T2 - CN)</p>
+                <p className="font-medium text-gray-900">
+                  8:00 - 17:30 (T2 - CN)
+                </p>
               </div>
             </div>
           </div>
