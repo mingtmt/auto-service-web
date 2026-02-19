@@ -1,10 +1,49 @@
 "use client";
-import { Phone } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Phone, ChevronUp } from "lucide-react";
 import { CONTACT_INFO } from "@/lib/data";
 
 export default function FloatingContact() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
+      
+      {/* Scroll to Top Button */}
+      <button
+        onClick={scrollToTop}
+        aria-label="Trở về đầu trang"
+        className={`w-10 h-10 bg-gray-700/80 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-brand-red transition-all duration-300 backdrop-blur-sm
+          ${
+            isVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-4 pointer-events-none"
+          }
+        `}
+      >
+        <ChevronUp size={20} strokeWidth={2.5} />
+      </button>
+
       {/* Zalo Button */}
       <a
         href=""
