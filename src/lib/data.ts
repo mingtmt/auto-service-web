@@ -1,8 +1,9 @@
 import {
+  BrushCleaning,
   Car,
+  Headset,
   PaintBucket,
   ShieldCheck,
-  Wrench,
   Award,
   Users,
   SearchCheck,
@@ -21,40 +22,59 @@ export const MENU_ITEMS = [
 
 export const SERVICES = [
   {
-    id: 1,
+    slug: "sua-chua-chung",
+    title: "Sửa Chữa Chung",
+    icon: Car,
+  },
+  {
+    slug: "cham-soc-xe",
+    title: "Dịch vụ chăm sóc xe hơi",
+    icon: BrushCleaning,
+  },
+  {
+    slug: "dong-son-o-to",
+    title: "Đồng Sơn Ô Tô",
+    icon: PaintBucket,
+  },
+  {
+    slug: "ho-tro",
+    title: "Dịch vụ hỗ trợ thêm",
+    icon: Headset,
+  }
+]
+
+export const SUB_SERVICES = [
+  {
     slug: "bao-duong-dinh-ky",
     title: "Bảo Dưỡng Định Kỳ",
+    parentSlug: "sua-chua-chung",
     description:
-      "Quy trình chuẩn 12 bước, đảm bảo vận hành êm ái, kéo dài tuổi thọ xe.",
-    icon: Wrench,
+      "4 cấp độ bảo dưỡng tổng quát định kỳ (5 - 200 ngàn km).",
     image:
       "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80",
   },
   {
-    id: 2,
-    slug: "sua-chua-chung",
-    title: "Sửa Chữa Chung",
+    slug: "sua-chua-dien-lanh",
+    title: "Sửa chữa điện lạnh",
+    parentSlug: "sua-chua-chung",
     description:
-      "Chẩn đoán điện, gầm, máy bằng thiết bị hiện đại. Xử lý triệt để các bệnh lạ.",
-    icon: Car,
+      "Kiểm tra giàn lạnh, vệ sinh bảo dưỡng hệ thống điều hòa.",
     image:
       "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80",
   },
   {
-    id: 3,
-    slug: "dong-son-o-to",
-    title: "Đồng Sơn Ô Tô",
-    description: "Công nghệ sơn gốc nước, phục hồi form xe như mới.",
-    icon: PaintBucket,
+    slug: "sua-chua-may-gam",
+    title: "Sửa chữa, bảo trì máy gầm",
+    parentSlug: "sua-chua-chung",
+    description: "Tiểu Tu, Trung Tu, Đại Tu Gầm Máy",
     image:
       "https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&q=80",
   },
   {
-    id: 4,
     slug: "cham-soc-xe",
     title: "Chăm Sóc Xe (Detailing)",
+    parentSlug: "cham-soc-xe",
     description: "Vệ sinh nội ngoại thất, phủ Ceramic, dán phim cách nhiệt.",
-    icon: ShieldCheck,
     image:
       "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80",
   },
@@ -123,56 +143,5 @@ export const BRANCHES = [
     name: "Chi Nhánh 1 (Nhà Bè)",
     address: "1260 Lê Văn Lương, Xã Phước Kiển, Huyện Nhà Bè, TP.HCM",
     mapLink: "https://maps.google.com/?q=1260+Lê+Văn+Lương+Nhà+Bè",
-  },
-];
-
-export const BLOG_POSTS = [
-  {
-    id: 1,
-    title: "Khi nào cần thay nhớt hộp số ô tô?",
-    slug: "khi-nao-can-thay-nhot-hop-so",
-    serviceSlug: "bao-duong-dinh-ky",
-    excerpt:
-      "Nhớt hộp số đóng vai trò quan trọng trong việc vận hành. Bao lâu thì nên thay?",
-    image:
-      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80",
-    date: "16/02/2026",
-    author: "Admin",
-  },
-  {
-    id: 2,
-    title: "5 Dấu hiệu má phanh đã mòn cần thay ngay",
-    slug: "5-dau-hieu-ma-phanh-mon",
-    serviceSlug: "bao-duong-dinh-ky",
-    excerpt:
-      "Tiếng kêu rít khi phanh là dấu hiệu nguy hiểm bạn không nên bỏ qua.",
-    image:
-      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80",
-    date: "15/02/2026",
-    author: "Kỹ Thuật Viên",
-  },
-  {
-    id: 3,
-    title: "Quy trình đồng sơn xe bị trầy xước nặng",
-    slug: "quy-trinh-dong-son-xe-tray-xuoc",
-    serviceSlug: "dong-son-o-to",
-    excerpt:
-      "Khám phá quy trình 6 bước phục hồi lớp sơn như mới tại Thanh Phong Auto.",
-    image:
-      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&q=80",
-    date: "10/02/2026",
-    author: "Admin",
-  },
-  {
-    id: 4,
-    title: "Xe bị rung lắc khi di chuyển - Nguyên nhân do đâu?",
-    slug: "xe-bi-rung-lac-khi-di-chuyen",
-    serviceSlug: "sua-chua-chung",
-    excerpt:
-      "Rung lắc tay lái hoặc thân xe có thể do lốp, thước lái hoặc hệ thống treo.",
-    image:
-      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80",
-    date: "12/02/2026",
-    author: "Chuyên gia",
   },
 ];

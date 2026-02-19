@@ -1,4 +1,4 @@
-import { SERVICES } from "@/lib/data";
+import { SERVICES, SUB_SERVICES } from "@/lib/data";
 import { getAllPosts, getPostsByService } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 import Link from "next/link";
@@ -66,11 +66,11 @@ export default async function ServicesPage(props: Props) {
           </Link>
 
           {/* Categories */}
-          {SERVICES.map((service) => {
+          {SUB_SERVICES.map((service) => {
             const isActive = currentCategory === service.slug;
             return (
               <Link
-                key={service.id}
+                key={service.slug}
                 href={`/services?category=${service.slug}`}
                 className={cn(
                   "px-5 py-2 rounded-full font-medium transition-all duration-200 border",
@@ -89,7 +89,7 @@ export default async function ServicesPage(props: Props) {
         {posts.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post) => {
-              const parentService = SERVICES.find(
+              const parentService = SUB_SERVICES.find(
                 (s) => s.slug === post.serviceSlug,
               );
 

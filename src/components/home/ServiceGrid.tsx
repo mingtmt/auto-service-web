@@ -1,14 +1,35 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, LucideIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { SERVICES } from "@/lib/data";
+import { SUB_SERVICES } from "@/lib/data";
 
-export default function ServiceGrid() {
+type Props = {
+  slug: string;
+  title: String,
+  icon: LucideIcon,
+};
+
+export default function ServiceGrid(props: Props) {
+  const filteredServices = SUB_SERVICES.filter(
+    (service) => service.parentSlug === props.slug
+  );
+
+  if (filteredServices.length === 0) return null;
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {SERVICES.map((service) => (
+    <div className="container mx-auto px-4 mb-10">
+      <div className="text-center mb-12 flex items-center justify-center gap-4">
+        <div className="w-12 h-12 bg-brand-red/10 rounded-full flex items-center justify-center text-brand-red">
+          <props.icon size={24} />
+        </div>
+        <h1 className="text-3xl md:text-4xl font-extrabold">
+          {props.title}
+        </h1>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {filteredServices.map((service) => (
         <div
-          key={service.id}
+          key={service.slug}
           className="group bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300"
         >
           {/* Image */}
@@ -23,9 +44,6 @@ export default function ServiceGrid() {
 
           {/* Content */}
           <div className="p-6">
-            <div className="w-12 h-12 bg-brand-red/10 rounded-full flex items-center justify-center text-brand-red mb-4">
-              <service.icon size={24} />
-            </div>
             <h3 className="text-xl font-bold mb-2 group-hover:text-brand-red transition-colors text-brand-dark">
               {service.title}
             </h3>
@@ -42,6 +60,7 @@ export default function ServiceGrid() {
           </div>
         </div>
       ))}
+    </div>
     </div>
   );
 }
