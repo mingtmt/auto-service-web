@@ -33,7 +33,7 @@ export default async function ServicesPage(props: Props) {
         <div className="relative z-10 text-center text-white px-4">
           <h1 className="text-3xl md:text-5xl font-bold mb-4 uppercase tracking-wider">
             {currentCategory
-              ? SERVICES.find((s) => s.slug === currentCategory)?.title ||
+              ? SUB_SERVICES.find((s) => s.slug === currentCategory)?.title ||
                 "Danh Mục"
               : "Thư Viện Dịch Vụ"}
           </h1>

@@ -84,7 +84,7 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               {SERVICES.map((service) => (
-                <li key={service.id}>
+                <li key={service.slug}>
                   <Link
                     href={`/services?category=${service.slug}`}
                     className="text-gray-400 hover:text-brand-red text-sm transition-colors flex items-center gap-2"
