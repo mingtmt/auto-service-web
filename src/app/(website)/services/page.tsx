@@ -11,8 +11,8 @@ type Props = {
 };
 
 export const metadata = {
-  title: "Thư Viện Kiến Thức Ô Tô | Thanh Phong Auto",
-  description: "Tổng hợp các bài viết chuyên sâu về kỹ thuật ô tô.",
+  title: "Dịch vụ Sửa chữa Ô Tô | Anh Khoa Auto",
+  description: "Tổng hợp tất cả dịch vụ sửa chữa Ô Tô.",
 };
 
 export default async function ServicesPage(props: Props) {

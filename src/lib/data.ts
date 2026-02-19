@@ -107,7 +107,7 @@ export const WHY_CHOOSE_US = [
 ];
 
 export const FOOTER_LINKS = [
-  { label: "Về Anh Khoa Auto", href: "/ve-chung-toi" },
+  { label: "Về Anh Khoa Auto", href: "/about" },
   { label: "Tuyển dụng", href: "/tuyen-dung" },
   { label: "Tin tức & Sự kiện", href: "/tin-tuc" },
   { label: "Chính sách bảo mật", href: "/chinh-sach" },

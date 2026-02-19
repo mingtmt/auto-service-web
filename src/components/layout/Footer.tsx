@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="bg-brand-dark text-white pt-16 pb-8 border-t border-red-900">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-          {/* Cột 1: Thông tin công ty */}
+          {/* Info */}
           <div>
             <div className="flex items-center gap-2 mb-6">
               <div className="w-10 h-10 bg-brand-red rounded flex items-center justify-center font-bold text-lg">
@@ -37,7 +37,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Cột 2: Hệ thống chi nhánh (Quan trọng) */}
+          {/* Address */}
           <div>
             <h3 className="text-lg font-bold mb-6 border-l-4 border-brand-red pl-3">
               Hệ Thống Garage
@@ -77,7 +77,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Cột 3: Dịch vụ */}
+          {/* Services */}
           <div>
             <h3 className="text-lg font-bold mb-6 border-l-4 border-brand-red pl-3">
               Dịch Vụ Chính
@@ -86,7 +86,7 @@ export default function Footer() {
               {SERVICES.map((service) => (
                 <li key={service.id}>
                   <Link
-                    href={`/dich-vu/${service.id}`}
+                    href={`/services?category=${service.slug}`}
                     className="text-gray-400 hover:text-brand-red text-sm transition-colors flex items-center gap-2"
                   >
                     <span className="w-1 h-1 bg-gray-500 rounded-full"></span>
@@ -97,7 +97,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Cột 4: Liên kết nhanh */}
+          {/* About */}
           <div>
             <h3 className="text-lg font-bold mb-6 border-l-4 border-brand-red pl-3">
               Về Chúng Tôi

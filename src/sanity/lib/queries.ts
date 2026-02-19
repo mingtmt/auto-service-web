@@ -35,7 +35,7 @@ export async function getPostsByService(serviceSlug: string): Promise<Post[]> {
       title,
       slug,
       mainImage,
-      excerpt,
+      "excerpt": pt::text(excerpt),
       author,
       publishedAt
     }`,
