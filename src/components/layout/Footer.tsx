@@ -7,7 +7,8 @@ export default function Footer() {
     <footer className="bg-brand-dark text-white pt-16 pb-8 border-t border-red-900">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-          {/* Info */}
+          
+          {/* Company info */}
           <div>
             <div className="flex items-center gap-2 mb-6">
               <div className="w-10 h-10 bg-brand-red rounded flex items-center justify-center font-bold text-lg">
@@ -22,22 +23,16 @@ export default function Footer() {
               dưỡng và chăm sóc xe ô tô chuyên nghiệp tại TP.HCM.
             </p>
             <div className="flex gap-4">
-              <a
-                href="#"
-                className="w-9 h-9 rounded bg-white/10 flex items-center justify-center hover:bg-brand-red transition-colors"
-              >
+              <a href="#" className="w-9 h-9 rounded bg-white/10 flex items-center justify-center hover:bg-brand-red transition-all duration-300">
                 <Facebook size={18} />
               </a>
-              <a
-                href="#"
-                className="w-9 h-9 rounded bg-white/10 flex items-center justify-center hover:bg-brand-red transition-colors"
-              >
+              <a href="#" className="w-9 h-9 rounded bg-white/10 flex items-center justify-center hover:bg-brand-red transition-all duration-300">
                 <Youtube size={18} />
               </a>
             </div>
           </div>
 
-          {/* Address */}
+          {/* Garage address */}
           <div>
             <h3 className="text-lg font-bold mb-6 border-l-4 border-brand-red pl-3">
               Hệ Thống Garage
@@ -59,17 +54,14 @@ export default function Footer() {
                   </a>
                 </div>
               ))}
-              <div className="pt-2 border-t border-white/10">
+              <div className="pt-4 border-t border-white/10 mt-4">
                 <div className="flex items-center gap-2 text-gray-400 text-sm mb-2">
                   <Clock size={16} className="text-brand-red" />
                   <span>8:00 - 17:30 (Thứ 2 - Chủ Nhật)</span>
                 </div>
                 <div className="flex items-center gap-2 text-gray-400 text-sm">
                   <Mail size={16} className="text-brand-red" />
-                  <a
-                    href={`mailto:${CONTACT_INFO.email}`}
-                    className="hover:text-white transition"
-                  >
+                  <a href={`mailto:${CONTACT_INFO.email}`} className="hover:text-white transition-colors">
                     {CONTACT_INFO.email}
                   </a>
                 </div>
@@ -77,7 +69,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Main services */}
           <div>
             <h3 className="text-lg font-bold mb-6 border-l-4 border-brand-red pl-3">
               Dịch Vụ Chính
@@ -87,9 +79,9 @@ export default function Footer() {
                 <li key={service.slug}>
                   <Link
                     href={`/services?category=${service.slug}`}
-                    className="text-gray-400 hover:text-brand-red text-sm transition-colors flex items-center gap-2"
+                    className="group text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-2"
                   >
-                    <span className="w-1 h-1 bg-gray-500 rounded-full"></span>
+                    <span className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-brand-red transition-colors"></span>
                     {service.title}
                   </Link>
                 </li>
@@ -97,7 +89,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* About */}
+          {/* About us */}
           <div>
             <h3 className="text-lg font-bold mb-6 border-l-4 border-brand-red pl-3">
               Về Chúng Tôi
@@ -107,8 +99,9 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-white text-sm transition-colors"
+                    className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-2"
                   >
+                     <span className="w-1.5 h-1.5 bg-gray-600 rounded-full hover:bg-brand-red transition-colors"></span>
                     {link.label}
                   </Link>
                 </li>
@@ -119,9 +112,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-white/10 pt-8 text-center text-gray-500 text-sm">
-          <p>
-            © {new Date().getFullYear()} Anh Khoa Auto. All rights reserved.
-          </p>
+          <p>© {new Date().getFullYear()} Anh Khoa Auto. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronRight, Calendar, User, Clock, ArrowLeft } from "lucide-react";
-import ServiceSidebar from "@/components/service/ServiceSidebar";
+import ServiceSidebar from "@/components/services/ServiceSidebar";
 import { slugify } from "@/lib/utils";
 import TableOfContents from "@/components/post/TableOfContents";
 
