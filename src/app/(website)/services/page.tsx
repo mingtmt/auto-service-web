@@ -38,12 +38,13 @@ export default async function ServicesPage(props: Props) {
       emptyCategoryName = mainService.title;
 
       const validSubSlugs = SUB_SERVICES.filter(
-        (s) => s.parentSlug === currentCategory
+        (s) => s.parentSlug === currentCategory,
       ).map((s) => s.slug);
 
       const allPosts = await getAllPosts();
-      posts = allPosts.filter((post) => validSubSlugs.includes(post.serviceSlug));
-
+      posts = allPosts.filter((post) =>
+        validSubSlugs.includes(post.serviceSlug),
+      );
     } else if (subService) {
       pageTitle = subService.title;
       emptyCategoryName = subService.title;
@@ -53,8 +54,7 @@ export default async function ServicesPage(props: Props) {
   }
 
   return (
-    <main className="pt-24 pb-20 bg-gray-50 min-h-screen">
-      
+    <main className="pb-20 bg-gray-50 min-h-screen">
       {/* Hero Section */}
       <div className="relative h-[300px] bg-brand-dark flex items-center justify-center">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-20"></div>
@@ -67,7 +67,6 @@ export default async function ServicesPage(props: Props) {
 
       <div className="container mx-auto px-4 mt-10">
         <div className="flex flex-col lg:flex-row gap-8 items-start">
-          
           {/* Sidebar */}
           <aside className="w-full lg:w-1/4">
             <ServiceFilter />
@@ -79,7 +78,7 @@ export default async function ServicesPage(props: Props) {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {posts.map((post) => {
                   const parentService = SUB_SERVICES.find(
-                    (s) => s.slug === post.serviceSlug
+                    (s) => s.slug === post.serviceSlug,
                   );
 
                   return (
@@ -108,7 +107,9 @@ export default async function ServicesPage(props: Props) {
                         <div className="flex items-center justify-between text-xs text-gray-400 mb-3">
                           <span className="flex items-center gap-1">
                             <Calendar size={14} />
-                            {new Date(post.publishedAt).toLocaleDateString("vi-VN")}
+                            {new Date(post.publishedAt).toLocaleDateString(
+                              "vi-VN",
+                            )}
                           </span>
                         </div>
 
@@ -122,7 +123,8 @@ export default async function ServicesPage(props: Props) {
 
                         <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
                           <span className="text-brand-red font-bold text-sm flex items-center group-hover:translate-x-2 transition-transform">
-                            Xem chi tiết <ArrowRight size={16} className="ml-1" />
+                            Xem chi tiết{" "}
+                            <ArrowRight size={16} className="ml-1" />
                           </span>
                         </div>
                       </div>

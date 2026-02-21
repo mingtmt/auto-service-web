@@ -11,11 +11,13 @@ export default function ServiceSidebarFilter() {
   const currentCategory = searchParams.get("category") || "all";
 
   const initialOpenSlug =
-    SUB_SERVICES.find((s) => s.slug === currentCategory)?.parentSlug || 
-    SERVICES.find((m) => m.slug === currentCategory)?.slug || 
+    SUB_SERVICES.find((s) => s.slug === currentCategory)?.parentSlug ||
+    SERVICES.find((m) => m.slug === currentCategory)?.slug ||
     null;
 
-  const [openMainSlug, setOpenMainSlug] = useState<string | null>(initialOpenSlug);
+  const [openMainSlug, setOpenMainSlug] = useState<string | null>(
+    initialOpenSlug,
+  );
 
   useEffect(() => {
     const activeSlug =
@@ -103,7 +105,9 @@ export default function ServiceSidebarFilter() {
                     >
                       <span
                         className={`w-1.5 h-1.5 rounded-full transition-colors ${
-                          currentCategory === sub.slug ? "bg-brand-red" : "bg-transparent"
+                          currentCategory === sub.slug
+                            ? "bg-brand-red"
+                            : "bg-transparent"
                         }`}
                       ></span>
                       {sub.title}

@@ -7,7 +7,6 @@ export default function Footer() {
     <footer className="bg-brand-dark text-white pt-16 pb-8 border-t border-red-900">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-          
           {/* Company info */}
           <div>
             <div className="flex items-center gap-2 mb-6">
@@ -23,10 +22,16 @@ export default function Footer() {
               dưỡng và chăm sóc xe ô tô chuyên nghiệp tại TP.HCM.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-9 h-9 rounded bg-white/10 flex items-center justify-center hover:bg-brand-red transition-all duration-300">
+              <a
+                href="#"
+                className="w-9 h-9 rounded bg-white/10 flex items-center justify-center hover:bg-brand-red transition-all duration-300"
+              >
                 <Facebook size={18} />
               </a>
-              <a href="#" className="w-9 h-9 rounded bg-white/10 flex items-center justify-center hover:bg-brand-red transition-all duration-300">
+              <a
+                href="#"
+                className="w-9 h-9 rounded bg-white/10 flex items-center justify-center hover:bg-brand-red transition-all duration-300"
+              >
                 <Youtube size={18} />
               </a>
             </div>
@@ -61,7 +66,10 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center gap-2 text-gray-400 text-sm">
                   <Mail size={16} className="text-brand-red" />
-                  <a href={`mailto:${CONTACT_INFO.email}`} className="hover:text-white transition-colors">
+                  <a
+                    href={`mailto:${CONTACT_INFO.email}`}
+                    className="hover:text-white transition-colors"
+                  >
                     {CONTACT_INFO.email}
                   </a>
                 </div>
@@ -101,7 +109,7 @@ export default function Footer() {
                     href={link.href}
                     className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-2"
                   >
-                     <span className="w-1.5 h-1.5 bg-gray-600 rounded-full hover:bg-brand-red transition-colors"></span>
+                    <span className="w-1.5 h-1.5 bg-gray-600 rounded-full hover:bg-brand-red transition-colors"></span>
                     {link.label}
                   </Link>
                 </li>
@@ -112,7 +120,9 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-white/10 pt-8 text-center text-gray-500 text-sm">
-          <p>© {new Date().getFullYear()} Anh Khoa Auto. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} Anh Khoa Auto. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

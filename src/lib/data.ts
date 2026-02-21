@@ -15,8 +15,8 @@ export const MENU_ITEMS = [
   { label: "Trang chủ", href: "/" },
   { label: "Giới thiệu", href: "/about" },
   { label: "Dịch vụ", href: "/services" },
-  { label: "Đào tạo", href: "/dao-tao" },
-  { label: "Tin tức", href: "/tin-tuc" },
+  { label: "Đào tạo", href: "/training" },
+  { label: "Thư viện", href: "/library" },
   { label: "Liên hệ", href: "/contact" },
 ];
 
@@ -40,16 +40,15 @@ export const SERVICES = [
     slug: "ho-tro",
     title: "Dịch vụ hỗ trợ thêm",
     icon: Headset,
-  }
-]
+  },
+];
 
 export const SUB_SERVICES = [
   {
     slug: "bao-duong-dinh-ky",
     title: "Bảo Dưỡng Định Kỳ",
     parentSlug: "sua-chua-chung",
-    description:
-      "4 cấp độ bảo dưỡng tổng quát định kỳ (5 - 200 ngàn km).",
+    description: "4 cấp độ bảo dưỡng tổng quát định kỳ (5 - 200 ngàn km).",
     image:
       "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80",
   },
@@ -57,8 +56,7 @@ export const SUB_SERVICES = [
     slug: "sua-chua-dien-lanh",
     title: "Sửa chữa điện lạnh",
     parentSlug: "sua-chua-chung",
-    description:
-      "Kiểm tra giàn lạnh, vệ sinh bảo dưỡng hệ thống điều hòa.",
+    description: "Kiểm tra giàn lạnh, vệ sinh bảo dưỡng hệ thống điều hòa.",
     image:
       "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80",
   },
@@ -82,7 +80,8 @@ export const SUB_SERVICES = [
     slug: "bao-duong-khoang-dong-co",
     title: "Bảo dưỡng khoang động cơ",
     parentSlug: "cham-soc-xe",
-    description: "Tăng tuổi thọ, giảm chi phí thay thế, tránh phát sinh lỗi động cơ.",
+    description:
+      "Tăng tuổi thọ, giảm chi phí thay thế, tránh phát sinh lỗi động cơ.",
     image:
       "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80",
   },
@@ -90,7 +89,8 @@ export const SUB_SERVICES = [
     slug: "cham-soc-tron-goi-noi-that",
     title: "Chăm sóc trọn gói nội thất",
     parentSlug: "cham-soc-xe",
-    description: "Trần xe - taplo, bảng điều khiển, bộ ghế, cánh cửa,cốp xe, sàn xe.",
+    description:
+      "Trần xe - taplo, bảng điều khiển, bộ ghế, cánh cửa,cốp xe, sàn xe.",
     image:
       "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80",
   },
@@ -106,7 +106,8 @@ export const SUB_SERVICES = [
     slug: "cham-soc-khoang-may",
     title: "Chăm sóc khoang máy",
     parentSlug: "cham-soc-xe",
-    description: "Khoang động cơ là nơi chứa trái tim của cả chiếc xe và các thiết bị phụ trợ hỗ trợ cho động cơ.",
+    description:
+      "Khoang động cơ là nơi chứa trái tim của cả chiếc xe và các thiết bị phụ trợ hỗ trợ cho động cơ.",
     image:
       "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80",
   },
@@ -114,7 +115,8 @@ export const SUB_SERVICES = [
     slug: "ve-sinh-bao-duong-phanh",
     title: "Vệ sinh bảo dưỡng phanh - thắng",
     parentSlug: "cham-soc-xe",
-    description: "Bôi trơn - làm sạch - kiểm tra ống dẫn dầu - vệ sinh bảo dưỡng.",
+    description:
+      "Bôi trơn - làm sạch - kiểm tra ống dẫn dầu - vệ sinh bảo dưỡng.",
     image:
       "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80",
   },
@@ -122,7 +124,8 @@ export const SUB_SERVICES = [
     slug: "son-dam-vat-toan-than",
     title: "Sơn dặm vá toàn thân",
     parentSlug: "dong-son-o-to",
-    description: "Kỹ năng pha sơn và kỹ thuật sơn điêu luyện – không thể nhận biết vết sơn mới và cũ.",
+    description:
+      "Kỹ năng pha sơn và kỹ thuật sơn điêu luyện – không thể nhận biết vết sơn mới và cũ.",
     image:
       "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80",
   },
@@ -130,7 +133,8 @@ export const SUB_SERVICES = [
     slug: "sua-chua-dong",
     title: "Sửa chữa đồng",
     parentSlug: "dong-son-o-to",
-    description: "Sửa chữa đồng thân xe từ đơn giản đến phức tạp, phục hồi xe tai nạn đảm bảo.",
+    description:
+      "Sửa chữa đồng thân xe từ đơn giản đến phức tạp, phục hồi xe tai nạn đảm bảo.",
     image:
       "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80",
   },
@@ -138,7 +142,8 @@ export const SUB_SERVICES = [
     slug: "dich-vu-cuu-ho-24-7-bao-hiem-xe",
     title: "Dịch vụ cứu hộ 24/7 - Bảo hiểm xe",
     parentSlug: "ho-tro",
-    description: "Sửa chữa đồng thân xe từ đơn giản đến phức tạp, phục hồi xe tai nạn đảm bảo.",
+    description:
+      "Sửa chữa đồng thân xe từ đơn giản đến phức tạp, phục hồi xe tai nạn đảm bảo.",
     image:
       "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80",
   },
@@ -146,7 +151,8 @@ export const SUB_SERVICES = [
     slug: "phu-tung-phu-kien-do-choi-xe",
     title: "Phụ tùng - Phụ kiện - Đồ chơi xe",
     parentSlug: "ho-tro",
-    description: "Sửa chữa đồng thân xe từ đơn giản đến phức tạp, phục hồi xe tai nạn đảm bảo.",
+    description:
+      "Sửa chữa đồng thân xe từ đơn giản đến phức tạp, phục hồi xe tai nạn đảm bảo.",
     image:
       "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80",
   },
@@ -154,7 +160,8 @@ export const SUB_SERVICES = [
     slug: "san-pham-bao-duong-cham-soc-xe",
     title: "Sản phẩm bảo dưỡng, chăm sóc xe",
     parentSlug: "ho-tro",
-    description: "Sửa chữa đồng thân xe từ đơn giản đến phức tạp, phục hồi xe tai nạn đảm bảo.",
+    description:
+      "Sửa chữa đồng thân xe từ đơn giản đến phức tạp, phục hồi xe tai nạn đảm bảo.",
     image:
       "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80",
   },
@@ -162,7 +169,8 @@ export const SUB_SERVICES = [
     slug: "sua-chua-oto-luu-dong-tai-nha",
     title: "Sửa chữa oto lưu động tại nhà",
     parentSlug: "ho-tro",
-    description: "Sửa chữa đồng thân xe từ đơn giản đến phức tạp, phục hồi xe tai nạn đảm bảo.",
+    description:
+      "Sửa chữa đồng thân xe từ đơn giản đến phức tạp, phục hồi xe tai nạn đảm bảo.",
     image:
       "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80",
   },

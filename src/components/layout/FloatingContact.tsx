@@ -28,7 +28,6 @@ export default function FloatingContact() {
 
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
-      
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}

@@ -19,10 +19,14 @@ export default function Home() {
 
           <div className="flex flex-col gap-24">
             {SERVICES.map((service) => (
-              <ServiceGrid key={service.slug} slug={service.slug} title={service.title} icon={service.icon} />
+              <ServiceGrid
+                key={service.slug}
+                slug={service.slug}
+                title={service.title}
+                icon={service.icon}
+              />
             ))}
           </div>
-
         </div>
       </section>
 

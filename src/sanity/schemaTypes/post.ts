@@ -29,28 +29,28 @@ export const postType = defineType({
         "Nhập chính xác slug của dịch vụ (VD: bao-duong-dinh-ky, sua-chua-chung)",
     }),
     defineField({
-      name: 'excerpt',
-      title: 'Mô tả ngắn',
-      type: 'array',
+      name: "excerpt",
+      title: "Mô tả ngắn",
+      type: "array",
       of: [
         {
-          type: 'block',
-          styles: [{ title: 'Normal', value: 'normal' }],
+          type: "block",
+          styles: [{ title: "Normal", value: "normal" }],
           lists: [],
           marks: {
             decorators: [
-              { title: 'Strong', value: 'strong' },
-              { title: 'Emphasis', value: 'em' },
+              { title: "Strong", value: "strong" },
+              { title: "Emphasis", value: "em" },
             ],
             annotations: [
               {
-                name: 'link',
-                type: 'object',
-                title: 'URL',
+                name: "link",
+                type: "object",
+                title: "URL",
                 fields: [
                   {
-                    name: 'href',
-                    type: 'url',
+                    name: "href",
+                    type: "url",
                   },
                 ],
               },

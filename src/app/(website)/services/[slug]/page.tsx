@@ -128,11 +128,14 @@ const sapoComponents = {
   },
   marks: {
     link: ({ children, value }: any) => (
-      <a href={value.href} className="text-brand-red underline hover:text-red-700">
+      <a
+        href={value.href}
+        className="text-brand-red underline hover:text-red-700"
+      >
         {children}
       </a>
     ),
-  }
+  },
 };
 
 export default async function BlogPostPage({
@@ -183,10 +186,13 @@ export default async function BlogPostPage({
             {/* Excerpt */}
             <div className="prose prose-lg max-w-none text-gray-700">
               {post.excerpt && (
-              <div className="mb-8">
-                <PortableText value={post.excerpt} components={sapoComponents} />
-              </div>
-            )}
+                <div className="mb-8">
+                  <PortableText
+                    value={post.excerpt}
+                    components={sapoComponents}
+                  />
+                </div>
+              )}
 
               {/* Thumbnail */}
               {post.mainImage && (
