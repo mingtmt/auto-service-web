@@ -23,21 +23,21 @@ export const MENU_ITEMS = [
 export const SERVICES = [
   {
     slug: "sua-chua-chung",
-    title: "Sửa Chữa Chung",
+    title: "Sửa chữa chung",
     icon: Car,
   },
   {
-    slug: "cham-soc-xe",
+    slug: "dich-vu-cham-soc-xe-hoi",
     title: "Dịch vụ chăm sóc xe hơi",
     icon: BrushCleaning,
   },
   {
     slug: "dong-son-o-to",
-    title: "Đồng Sơn Ô Tô",
+    title: "Đồng sơn ô tô",
     icon: PaintBucket,
   },
   {
-    slug: "ho-tro",
+    slug: "dich-vu-ho-tro-them",
     title: "Dịch vụ hỗ trợ thêm",
     icon: Headset,
   },
@@ -46,7 +46,7 @@ export const SERVICES = [
 export const SUB_SERVICES = [
   {
     slug: "bao-duong-dinh-ky",
-    title: "Bảo Dưỡng Định Kỳ",
+    title: "Bảo dưỡng định kỳ",
     parentSlug: "sua-chua-chung",
     description: "4 cấp độ bảo dưỡng tổng quát định kỳ (5 - 200 ngàn km).",
     image:
@@ -61,7 +61,7 @@ export const SUB_SERVICES = [
       "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80",
   },
   {
-    slug: "sua-chua-may-gam",
+    slug: "sua-chua-bao-tri-may-gam",
     title: "Sửa chữa, bảo trì máy gầm",
     parentSlug: "sua-chua-chung",
     description: "Tiểu Tu, Trung Tu, Đại Tu Gầm Máy",
@@ -69,9 +69,9 @@ export const SUB_SERVICES = [
       "https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&q=80",
   },
   {
-    slug: "bao-duong-noi-that",
+    slug: "bao-duong-ve-sinh-noi-that",
     title: "Bảo dưỡng, vệ sinh nội thất",
-    parentSlug: "cham-soc-xe",
+    parentSlug: "dich-vu-cham-soc-xe-hoi",
     description: "Tránh ẩm mốc, khử mùi hôi cho ô tô của bạn nhanh chóng.",
     image:
       "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80",
@@ -79,7 +79,7 @@ export const SUB_SERVICES = [
   {
     slug: "bao-duong-khoang-dong-co",
     title: "Bảo dưỡng khoang động cơ",
-    parentSlug: "cham-soc-xe",
+    parentSlug: "dich-vu-cham-soc-xe-hoi",
     description:
       "Tăng tuổi thọ, giảm chi phí thay thế, tránh phát sinh lỗi động cơ.",
     image:
@@ -88,7 +88,7 @@ export const SUB_SERVICES = [
   {
     slug: "cham-soc-tron-goi-noi-that",
     title: "Chăm sóc trọn gói nội thất",
-    parentSlug: "cham-soc-xe",
+    parentSlug: "dich-vu-cham-soc-xe-hoi",
     description:
       "Trần xe - taplo, bảng điều khiển, bộ ghế, cánh cửa,cốp xe, sàn xe.",
     image:
@@ -97,7 +97,7 @@ export const SUB_SERVICES = [
   {
     slug: "cham-soc-ngoai-that",
     title: "Chăm sóc ngoại thất",
-    parentSlug: "cham-soc-xe",
+    parentSlug: "dich-vu-cham-soc-xe-hoi",
     description: "Tránh xuống cấp màu sắc, chất lượng vật liệu bên ngoài xe.",
     image:
       "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80",
@@ -105,16 +105,16 @@ export const SUB_SERVICES = [
   {
     slug: "cham-soc-khoang-may",
     title: "Chăm sóc khoang máy",
-    parentSlug: "cham-soc-xe",
+    parentSlug: "dich-vu-cham-soc-xe-hoi",
     description:
       "Khoang động cơ là nơi chứa trái tim của cả chiếc xe và các thiết bị phụ trợ hỗ trợ cho động cơ.",
     image:
       "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80",
   },
   {
-    slug: "ve-sinh-bao-duong-phanh",
+    slug: "ve-sinh-bao-duong-phanh-thang",
     title: "Vệ sinh bảo dưỡng phanh - thắng",
-    parentSlug: "cham-soc-xe",
+    parentSlug: "dich-vu-cham-soc-xe-hoi",
     description:
       "Bôi trơn - làm sạch - kiểm tra ống dẫn dầu - vệ sinh bảo dưỡng.",
     image:
@@ -141,7 +141,7 @@ export const SUB_SERVICES = [
   {
     slug: "dich-vu-cuu-ho-24-7-bao-hiem-xe",
     title: "Dịch vụ cứu hộ 24/7 - Bảo hiểm xe",
-    parentSlug: "ho-tro",
+    parentSlug: "dich-vu-ho-tro-them",
     description:
       "Sửa chữa đồng thân xe từ đơn giản đến phức tạp, phục hồi xe tai nạn đảm bảo.",
     image:
@@ -150,7 +150,7 @@ export const SUB_SERVICES = [
   {
     slug: "phu-tung-phu-kien-do-choi-xe",
     title: "Phụ tùng - Phụ kiện - Đồ chơi xe",
-    parentSlug: "ho-tro",
+    parentSlug: "dich-vu-ho-tro-them",
     description:
       "Sửa chữa đồng thân xe từ đơn giản đến phức tạp, phục hồi xe tai nạn đảm bảo.",
     image:
@@ -159,7 +159,7 @@ export const SUB_SERVICES = [
   {
     slug: "san-pham-bao-duong-cham-soc-xe",
     title: "Sản phẩm bảo dưỡng, chăm sóc xe",
-    parentSlug: "ho-tro",
+    parentSlug: "dich-vu-ho-tro-them",
     description:
       "Sửa chữa đồng thân xe từ đơn giản đến phức tạp, phục hồi xe tai nạn đảm bảo.",
     image:
@@ -168,7 +168,7 @@ export const SUB_SERVICES = [
   {
     slug: "sua-chua-oto-luu-dong-tai-nha",
     title: "Sửa chữa oto lưu động tại nhà",
-    parentSlug: "ho-tro",
+    parentSlug: "dich-vu-ho-tro-them",
     description:
       "Sửa chữa đồng thân xe từ đơn giản đến phức tạp, phục hồi xe tai nạn đảm bảo.",
     image:

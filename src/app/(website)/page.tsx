@@ -5,10 +5,10 @@ import { SERVICES } from "@/lib/data";
 
 export default function Home() {
   return (
-    <div className="flex flex-col pb-20">
+    <div className="flex flex-col">
       <HeroSlider />
 
-      <section className="bg-zinc-950 py-20 mt-12">
+      <section className="bg-zinc-950 py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-brand-red font-bold text-sm md:text-base uppercase tracking-[0.2em] mb-4">
