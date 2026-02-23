@@ -1,12 +1,16 @@
 import Link from "next/link";
-import { SERVICES, CONTACT_INFO } from "@/lib/data";
+import { CONTACT_INFO, getServices } from "@/lib/data";
 import { ArrowRight, Phone } from "lucide-react";
+import { Locale } from "@/dictionaries";
 
-export default function ServiceSidebar({
-  currentSlug,
-}: {
+type Props = {
+  dict: any;
+  lang: Locale;
   currentSlug: string;
-}) {
+};
+export default function ServiceSidebar(props: Props) {
+  const services = getServices(props.dict);
+
   return (
     <aside className="space-y-8">
       {/* List of services */}
@@ -15,18 +19,18 @@ export default function ServiceSidebar({
           Dịch Vụ Khác
         </h3>
         <div className="flex flex-col space-y-2">
-          {SERVICES.map((service) => (
+          {services.map((service) => (
             <Link
               key={service.slug}
-              href={`/services/${service.slug}`}
+              href={`/services?category=${service.slug}`}
               className={`flex items-center justify-between p-3 rounded transition-colors ${
-                service.slug === currentSlug
+                service.slug === props.currentSlug
                   ? "bg-brand-red text-white font-medium"
                   : "text-gray-600 hover:bg-gray-100"
               }`}
             >
               {service.title}
-              {service.slug !== currentSlug && <ArrowRight size={16} />}
+              {service.slug !== props.currentSlug && <ArrowRight size={16} />}
             </Link>
           ))}
         </div>

@@ -1,0 +1,25 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "products": "Products",
+    "training": "Training",
+    "library": "Library",
+    "contact": "Contact"
+  },
+  "common": {
+    "bookAppointment": "Book Appointment",
+    "viewDetails": "View Details",
+    "addToCart": "Add to Cart",
+    "outOfStock": "Out of Stock",
+    "search": "Search",
+    "ourServices": "Our Services"
+  },
+  "services": {
+    "common": "Sửa chữa chung",
+    "detailing": "Dịch vụ chăm sóc xe ô tô",
+    "painting": "Đồng sơn ô tô",
+    "support": "Dịch vụ hỗ trỡ thêm"
+  }
+}

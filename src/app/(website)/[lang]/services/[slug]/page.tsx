@@ -4,10 +4,18 @@ import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronRight, Calendar, User, Clock, ArrowLeft } from "lucide-react";
+import { ChevronRight, Calendar, User, ArrowLeft } from "lucide-react";
 import ServiceSidebar from "@/components/services/ServiceSidebar";
 import { slugify } from "@/lib/utils";
 import TableOfContents from "@/components/post/TableOfContents";
+import { getDictionary, Locale } from "@/dictionaries";
+
+type Props = {
+  params: {
+    lang: Locale;
+    slug: string;
+  };
+};
 
 const ptComponents = {
   types: {
@@ -138,12 +146,9 @@ const sapoComponents = {
   },
 };
 
-export default async function BlogPostPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
+export default async function BlogPostPage(props: Props) {
+  const { slug, lang } = await props.params;
+  const dict = await getDictionary(lang);
   const post = await getPostBySlug(slug);
 
   if (!post) return notFound();
@@ -225,7 +230,11 @@ export default async function BlogPostPage({
 
           {/* Sidebar */}
           <div className="lg:w-1/3">
-            <ServiceSidebar currentSlug={post.serviceSlug} />
+            <ServiceSidebar
+              dict={dict}
+              lang={lang}
+              currentSlug={post.serviceSlug}
+            />
           </div>
         </div>
       </div>

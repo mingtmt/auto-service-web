@@ -1,13 +1,17 @@
-import { SERVICES, SUB_SERVICES } from "@/lib/data";
+import { SUB_SERVICES, getServices } from "@/lib/data";
 import { getAllPosts, getPostsByService } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 import Link from "next/link";
 import Image from "next/image";
 import { Calendar, ArrowRight, Tag, FilterX } from "lucide-react";
 import ServiceFilter from "@/components/services/ServiceFilter";
+import { getDictionary, Locale } from "@/dictionaries";
 
 type Props = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  params: {
+    lang: Locale;
+  }
 };
 
 export const metadata = {
@@ -16,6 +20,10 @@ export const metadata = {
 };
 
 export default async function ServicesPage(props: Props) {
+  const { lang } = await props.params;
+  const dict = await getDictionary(lang);
+  const services = getServices(dict);
+
   const searchParams = await props.searchParams;
   const currentCategory =
     typeof searchParams.category === "string"
@@ -30,7 +38,7 @@ export default async function ServicesPage(props: Props) {
   if (!currentCategory) {
     posts = await getAllPosts();
   } else {
-    const mainService = SERVICES.find((s) => s.slug === currentCategory);
+    const mainService = services.find((s) => s.slug === currentCategory);
     const subService = SUB_SERVICES.find((s) => s.slug === currentCategory);
 
     if (mainService) {
@@ -69,7 +77,7 @@ export default async function ServicesPage(props: Props) {
         <div className="flex flex-col lg:flex-row gap-8 items-start">
           {/* Sidebar */}
           <aside className="w-full lg:w-1/4">
-            <ServiceFilter />
+            <ServiceFilter dict={dict} lang={lang} />
           </aside>
 
           {/* List posts */}

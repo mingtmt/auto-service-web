@@ -11,35 +11,35 @@ import {
   HeartHandshake,
 } from "lucide-react";
 
-export const MENU_ITEMS = [
-  { label: "Trang chủ", href: "/" },
-  { label: "Giới thiệu", href: "/about" },
-  { label: "Dịch vụ", href: "/services" },
-  { label: "Sản phẩm", href: "/products" },
-  { label: "Đào tạo", href: "/training" },
-  { label: "Thư viện", href: "/library" },
-  { label: "Liên hệ", href: "/contact" },
+export const getMenuItems = (dict: any) => [
+  { label: dict.navigation.home, href: "/" },
+  { label: dict.navigation.about, href: "/about" },
+  { label: dict.navigation.services, href: "/services" },
+  { label: dict.navigation.products, href: "/products" },
+  { label: dict.navigation.training, href: "/training" },
+  { label: dict.navigation.library, href: "/library" },
+  { label: dict.navigation.contact, href: "/contact" },
 ];
 
-export const SERVICES = [
+export const getServices = (dict: any) => [
   {
     slug: "sua-chua-chung",
-    title: "Sửa chữa chung",
+    title: dict.services.common,
     icon: Car,
   },
   {
     slug: "dich-vu-cham-soc-xe-hoi",
-    title: "Dịch vụ chăm sóc xe hơi",
+    title: dict.services.detailing,
     icon: BrushCleaning,
   },
   {
     slug: "dong-son-o-to",
-    title: "Đồng sơn ô tô",
+    title: dict.services.painting,
     icon: PaintBucket,
   },
   {
     slug: "dich-vu-ho-tro-them",
-    title: "Dịch vụ hỗ trợ thêm",
+    title: dict.services.support,
     icon: Headset,
   },
 ];

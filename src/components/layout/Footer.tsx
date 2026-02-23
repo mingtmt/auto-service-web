@@ -1,8 +1,16 @@
 import Link from "next/link";
 import { Facebook, Youtube, MapPin, Mail, Clock } from "lucide-react";
-import { BRANCHES, CONTACT_INFO, FOOTER_LINKS, SERVICES } from "@/lib/data";
+import { BRANCHES, CONTACT_INFO, FOOTER_LINKS, getServices } from "@/lib/data";
+import { Locale } from "@/dictionaries";
 
-export default function Footer() {
+type Props = {
+  dict: any;
+  lang: Locale;
+};
+
+export default function Footer(props: Props) {
+  const services = getServices(props.dict);
+
   return (
     <footer className="bg-brand-dark text-white pt-16 pb-8 border-t border-red-900">
       <div className="container mx-auto px-4">
@@ -83,7 +91,7 @@ export default function Footer() {
               Dịch Vụ Chính
             </h3>
             <ul className="space-y-3">
-              {SERVICES.map((service) => (
+              {services.map((service) => (
                 <li key={service.slug}>
                   <Link
                     href={`/services?category=${service.slug}`}

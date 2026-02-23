@@ -1,9 +1,18 @@
 import HeroSlider from "@/components/home/HeroSlider";
 import ServiceGrid from "@/components/home/ServiceGrid";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
-import { SERVICES } from "@/lib/data";
+import { getServices } from "@/lib/data";
+import { getDictionary, Locale } from "@/dictionaries";
 
-export default function Home() {
+type Props = {
+  params: {
+    lang: Locale;
+  };
+};
+export default async function Home(props: Props) {
+  const { lang } = await props.params;
+  const dict = await getDictionary(lang);
+  const services = getServices(dict);
   return (
     <div className="flex flex-col">
       <HeroSlider />
@@ -12,13 +21,13 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-brand-red font-bold text-sm md:text-base uppercase tracking-[0.2em] mb-4">
-              Dịch vụ của chúng tôi
+              {dict.common.ourServices}
             </h2>
             <div className="w-16 h-1 bg-brand-red mx-auto rounded-full"></div>
           </div>
 
           <div className="flex flex-col gap-24">
-            {SERVICES.map((service) => (
+            {services.map((service) => (
               <ServiceGrid
                 key={service.slug}
                 slug={service.slug}

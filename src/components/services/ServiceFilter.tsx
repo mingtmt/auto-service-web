@@ -3,16 +3,23 @@
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ChevronDown } from "lucide-react";
-import { SERVICES, SUB_SERVICES } from "@/lib/data";
+import { SUB_SERVICES, getServices } from "@/lib/data";
+import { Locale } from "@/dictionaries";
 
-export default function ServiceSidebarFilter() {
+type Props = {
+  dict: any;
+  lang: Locale;
+};
+
+export default function ServiceSidebarFilter(props: Props) {
+  const services = getServices(props.dict);
   const router = useRouter();
   const searchParams = useSearchParams();
   const currentCategory = searchParams.get("category") || "all";
 
   const initialOpenSlug =
     SUB_SERVICES.find((s) => s.slug === currentCategory)?.parentSlug ||
-    SERVICES.find((m) => m.slug === currentCategory)?.slug ||
+    services.find((m) => m.slug === currentCategory)?.slug ||
     null;
 
   const [openMainSlug, setOpenMainSlug] = useState<string | null>(
@@ -22,7 +29,7 @@ export default function ServiceSidebarFilter() {
   useEffect(() => {
     const activeSlug =
       SUB_SERVICES.find((s) => s.slug === currentCategory)?.parentSlug ||
-      SERVICES.find((m) => m.slug === currentCategory)?.slug ||
+      services.find((m) => m.slug === currentCategory)?.slug ||
       null;
 
     setOpenMainSlug(activeSlug);
@@ -59,7 +66,7 @@ export default function ServiceSidebarFilter() {
 
       {/* List main services) */}
       <div className="flex flex-col gap-3">
-        {SERVICES.map((main) => {
+        {services.map((main) => {
           const subs = SUB_SERVICES.filter((s) => s.parentSlug === main.slug);
           if (subs.length === 0) return null;
 

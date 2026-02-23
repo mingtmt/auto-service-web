@@ -41,7 +41,9 @@ export async function getAllPosts(): Promise<Service[]> {
   );
 }
 
-export async function getPostsByService(serviceSlug: string): Promise<Service[]> {
+export async function getPostsByService(
+  serviceSlug: string,
+): Promise<Service[]> {
   return client.fetch(
     groq`*[_type == "post" && serviceSlug == $serviceSlug] | order(publishedAt desc) {
       _id,

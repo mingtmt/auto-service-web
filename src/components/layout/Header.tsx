@@ -13,10 +13,23 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { CONTACT_INFO, MENU_ITEMS, SERVICES, SUB_SERVICES } from "@/lib/data";
+import {
+  CONTACT_INFO,
+  SUB_SERVICES,
+  getMenuItems,
+  getServices,
+} from "@/lib/data";
 import { cn } from "@/lib/utils";
+import { Locale } from "@/dictionaries";
 
-export default function Header() {
+type Props = {
+  dict: any;
+  lang: Locale;
+};
+export default function Header(props: Props) {
+  const menuItems = getMenuItems(props.dict);
+  const services = getServices(props.dict);
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -84,7 +97,7 @@ export default function Header() {
 
           {/* Desktop Menu */}
           <nav className="hidden lg:flex items-center gap-8 relative">
-            {MENU_ITEMS.map((item) => {
+            {menuItems.map((item) => {
               if (item.href === "/services") {
                 return (
                   <div
@@ -112,7 +125,7 @@ export default function Header() {
                       <div className="bg-white shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] border-t-4 border-brand-red rounded-b-xl overflow-hidden cursor-default">
                         <div className="p-8">
                           <div className="grid grid-cols-4 gap-8">
-                            {SERVICES.map((service) => {
+                            {services.map((service) => {
                               const childServices = SUB_SERVICES.filter(
                                 (sub) => sub.parentSlug === service.slug,
                               );
@@ -243,7 +256,7 @@ export default function Header() {
 
           <div className="flex-1 overflow-y-auto py-4">
             <nav className="flex flex-col px-4 space-y-2">
-              {MENU_ITEMS.map((item) => (
+              {menuItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}

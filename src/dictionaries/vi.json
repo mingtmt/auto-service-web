@@ -1,0 +1,25 @@
+{
+  "navigation": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "services": "Dịch vụ",
+    "products": "Sản phẩm",
+    "training": "Đào tạo",
+    "library": "Thư viện",
+    "contact": "Liên hệ"
+  },
+  "common": {
+    "bookAppointment": "Đặt Lịch Hẹn",
+    "viewDetails": "Xem chi tiết",
+    "addToCart": "Thêm vào giỏ hàng",
+    "outOfStock": "Tạm hết hàng",
+    "search": "Tìm kiếm",
+    "ourServices": "Dịch vụ của chúng tôi"
+  },
+  "services": {
+    "common": "Sửa chữa chung",
+    "detailing": "Dịch vụ chăm sóc xe ô tô",
+    "painting": "Đồng sơn ô tô",
+    "support": "Dịch vụ hỗ trỡ thêm"
+  }
+}
