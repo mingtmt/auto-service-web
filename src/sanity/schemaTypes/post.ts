@@ -1,6 +1,6 @@
 import { defineField, defineType } from "sanity";
 
-export const postType = defineType({
+export default defineType({
   name: "post",
   title: "Bài viết (Dịch vụ)",
   type: "document",

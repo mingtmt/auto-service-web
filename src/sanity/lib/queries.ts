@@ -13,6 +13,19 @@ export interface Post {
   content: any;
 }
 
+export interface Product {
+  _id: string;
+  name: string;
+  slug: { current: string };
+  sku: string;
+  price: number;
+  discountPrice: number;
+  stock: number;
+  category: string;
+  mainImage: any;
+  description: any;
+}
+
 export async function getAllPosts(): Promise<Post[]> {
   return client.fetch(
     groq`*[_type == "post"] | order(publishedAt desc) {
@@ -56,5 +69,39 @@ export async function getPostBySlug(slug: string): Promise<Post> {
       content
     }`,
     { slug },
+  );
+}
+
+export async function getAllProducts(): Promise<Product[]> {
+  return client.fetch(
+    groq`*[_type == "product"] | order(_createdAt desc) {
+      _id,
+      name,
+      "slug": slug.current,
+      sku,
+      price,
+      discountPrice,
+      stock,
+      category,
+      mainImage
+    }`
+  );
+}
+
+export async function getProductBySlug(slug: string): Promise<Product> {
+  return client.fetch(
+    groq`*[_type == "product" && slug.current == $slug][0] {
+      _id,
+      name,
+      "slug": slug.current,
+      sku,
+      price,
+      discountPrice,
+      stock,
+      category,
+      mainImage,
+      description
+    }`,
+    { slug }
   );
 }

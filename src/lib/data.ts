@@ -15,6 +15,7 @@ export const MENU_ITEMS = [
   { label: "Trang chủ", href: "/" },
   { label: "Giới thiệu", href: "/about" },
   { label: "Dịch vụ", href: "/services" },
+  { label: "Sản phẩm", href: "/products" },
   { label: "Đào tạo", href: "/training" },
   { label: "Thư viện", href: "/library" },
   { label: "Liên hệ", href: "/contact" },
@@ -148,26 +149,8 @@ export const SUB_SERVICES = [
       "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80",
   },
   {
-    slug: "phu-tung-phu-kien-do-choi-xe",
-    title: "Phụ tùng - Phụ kiện - Đồ chơi xe",
-    parentSlug: "dich-vu-ho-tro-them",
-    description:
-      "Sửa chữa đồng thân xe từ đơn giản đến phức tạp, phục hồi xe tai nạn đảm bảo.",
-    image:
-      "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80",
-  },
-  {
-    slug: "san-pham-bao-duong-cham-soc-xe",
-    title: "Sản phẩm bảo dưỡng, chăm sóc xe",
-    parentSlug: "dich-vu-ho-tro-them",
-    description:
-      "Sửa chữa đồng thân xe từ đơn giản đến phức tạp, phục hồi xe tai nạn đảm bảo.",
-    image:
-      "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80",
-  },
-  {
-    slug: "sua-chua-oto-luu-dong-tai-nha",
-    title: "Sửa chữa oto lưu động tại nhà",
+    slug: "sua-chua-o-to-luu-dong-tai-nha",
+    title: "Sửa chữa ô tô lưu động tại nhà",
     parentSlug: "dich-vu-ho-tro-them",
     description:
       "Sửa chữa đồng thân xe từ đơn giản đến phức tạp, phục hồi xe tai nạn đảm bảo.",
@@ -241,3 +224,11 @@ export const BRANCHES = [
     mapLink: "https://maps.google.com/?q=1260+Lê+Văn+Lương+Nhà+Bè",
   },
 ];
+
+export const PRODUCT_CATEGORIES: Record<string, string> = {
+  "dau-nhot": "Dầu nhớt & Phụ gia",
+  "phu-tung": "Phụ tùng thay thế",
+  "noi-that": "Phụ kiện nội thất",
+  "ngoai-that": "Phụ kiện ngoại thất",
+  "cham-soc-xe": "Chăm sóc xe",
+}
