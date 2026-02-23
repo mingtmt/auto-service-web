@@ -17,21 +17,21 @@ export const metadata: Metadata = {
 type Props = {
   children: React.ReactNode;
   params: {
-    lang: Locale;
+    lang: string;
   };
 };
 
 export default async function RootLayout(props: Props) {
   const { lang } = await props.params;
-  const dict = await getDictionary(lang);
+  const dict = await getDictionary(lang as Locale);
 
   return (
     <html lang="vi">
       <body className={inter.className}>
-        <Header dict={dict} lang={lang} />
+        <Header dict={dict} lang={lang as Locale} />
         <main className="min-h-screen pt-[120px]">{props.children}</main>
         <FloatingContact />
-        <Footer dict={dict} lang={lang} />
+        <Footer dict={dict} lang={lang as Locale} />
       </body>
     </html>
   );

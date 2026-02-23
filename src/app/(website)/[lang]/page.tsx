@@ -6,12 +6,12 @@ import { getDictionary, Locale } from "@/dictionaries";
 
 type Props = {
   params: {
-    lang: Locale;
+    lang: string;
   };
 };
 export default async function Home(props: Props) {
   const { lang } = await props.params;
-  const dict = await getDictionary(lang);
+  const dict = await getDictionary(lang as Locale);
   const services = getServices(dict);
   return (
     <div className="flex flex-col">

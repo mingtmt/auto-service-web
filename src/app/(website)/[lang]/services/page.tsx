@@ -10,7 +10,7 @@ import { getDictionary, Locale } from "@/dictionaries";
 type Props = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
   params: {
-    lang: Locale;
+    lang: string;
   }
 };
 
@@ -21,7 +21,7 @@ export const metadata = {
 
 export default async function ServicesPage(props: Props) {
   const { lang } = await props.params;
-  const dict = await getDictionary(lang);
+  const dict = await getDictionary(lang as Locale);
   const services = getServices(dict);
 
   const searchParams = await props.searchParams;
@@ -77,7 +77,7 @@ export default async function ServicesPage(props: Props) {
         <div className="flex flex-col lg:flex-row gap-8 items-start">
           {/* Sidebar */}
           <aside className="w-full lg:w-1/4">
-            <ServiceFilter dict={dict} lang={lang} />
+            <ServiceFilter dict={dict} lang={lang as Locale} />
           </aside>
 
           {/* List posts */}
