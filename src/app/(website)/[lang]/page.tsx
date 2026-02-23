@@ -5,9 +5,7 @@ import { getServices } from "@/lib/data";
 import { getDictionary, Locale } from "@/dictionaries";
 
 type Props = {
-  params: {
-    lang: string;
-  };
+  params: Promise<{ lang: string }>;
 };
 export default async function Home(props: Props) {
   const { lang } = await props.params;

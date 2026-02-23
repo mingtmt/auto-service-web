@@ -9,9 +9,7 @@ import { getDictionary, Locale } from "@/dictionaries";
 
 type Props = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-  params: {
-    lang: string;
-  }
+  params: Promise<{ lang: string }>;
 };
 
 export const metadata = {

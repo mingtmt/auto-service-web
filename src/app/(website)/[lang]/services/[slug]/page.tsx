@@ -11,10 +11,10 @@ import TableOfContents from "@/components/post/TableOfContents";
 import { getDictionary, Locale } from "@/dictionaries";
 
 type Props = {
-  params: {
-    lang: Locale;
-    slug: string;
-  };
+  params: Promise<{ 
+    lang: string, 
+    slug: string 
+  }>;
 };
 
 const ptComponents = {
@@ -148,7 +148,7 @@ const sapoComponents = {
 
 export default async function BlogPostPage(props: Props) {
   const { slug, lang } = await props.params;
-  const dict = await getDictionary(lang);
+  const dict = await getDictionary(lang as Locale);
   const post = await getPostBySlug(slug);
 
   if (!post) return notFound();
@@ -232,7 +232,7 @@ export default async function BlogPostPage(props: Props) {
           <div className="lg:w-1/3">
             <ServiceSidebar
               dict={dict}
-              lang={lang}
+              lang={lang as Locale}
               currentSlug={post.serviceSlug}
             />
           </div>
