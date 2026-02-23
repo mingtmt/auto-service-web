@@ -1,7 +1,7 @@
 import { client } from "./client";
 import { groq } from "next-sanity";
 
-export interface Post {
+export interface Service {
   _id: string;
   title: string;
   slug: { current: string };
@@ -26,7 +26,7 @@ export interface Product {
   description: any;
 }
 
-export async function getAllPosts(): Promise<Post[]> {
+export async function getAllPosts(): Promise<Service[]> {
   return client.fetch(
     groq`*[_type == "post"] | order(publishedAt desc) {
       _id,
@@ -41,7 +41,7 @@ export async function getAllPosts(): Promise<Post[]> {
   );
 }
 
-export async function getPostsByService(serviceSlug: string): Promise<Post[]> {
+export async function getPostsByService(serviceSlug: string): Promise<Service[]> {
   return client.fetch(
     groq`*[_type == "post" && serviceSlug == $serviceSlug] | order(publishedAt desc) {
       _id,
@@ -56,7 +56,7 @@ export async function getPostsByService(serviceSlug: string): Promise<Post[]> {
   );
 }
 
-export async function getPostBySlug(slug: string): Promise<Post> {
+export async function getPostBySlug(slug: string): Promise<Service> {
   return client.fetch(
     groq`*[_type == "post" && slug.current == $slug][0] {
       title,
@@ -84,7 +84,7 @@ export async function getAllProducts(): Promise<Product[]> {
       stock,
       category,
       mainImage
-    }`
+    }`,
   );
 }
 
@@ -102,6 +102,6 @@ export async function getProductBySlug(slug: string): Promise<Product> {
       mainImage,
       description
     }`,
-    { slug }
+    { slug },
   );
 }

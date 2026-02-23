@@ -231,4 +231,4 @@ export const PRODUCT_CATEGORIES: Record<string, string> = {
   "noi-that": "Phụ kiện nội thất",
   "ngoai-that": "Phụ kiện ngoại thất",
   "cham-soc-xe": "Chăm sóc xe",
-}
+};

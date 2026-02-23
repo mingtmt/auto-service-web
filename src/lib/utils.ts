@@ -50,4 +50,4 @@ export function formatPrice(price: number) {
     style: "currency",
     currency: "VND",
   }).format(price);
-};
+}

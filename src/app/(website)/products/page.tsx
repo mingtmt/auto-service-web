@@ -34,9 +34,13 @@ export default async function ProductsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {products.map((product: any) => {
               // Calculate discount percentage
-              const hasDiscount = product.discountPrice && product.discountPrice < product.price;
+              const hasDiscount =
+                product.discountPrice && product.discountPrice < product.price;
               const discountPercent = hasDiscount
-                ? Math.round(((product.price - product.discountPrice) / product.price) * 100)
+                ? Math.round(
+                    ((product.price - product.discountPrice) / product.price) *
+                      100,
+                  )
                 : 0;
 
               return (

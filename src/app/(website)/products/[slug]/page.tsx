@@ -4,7 +4,14 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { PortableText } from "@portabletext/react";
-import { ShoppingCart, Phone, CheckCircle2, XCircle, ChevronRight, Home } from "lucide-react";
+import {
+  ShoppingCart,
+  Phone,
+  CheckCircle2,
+  XCircle,
+  ChevronRight,
+  Home,
+} from "lucide-react";
 import { CONTACT_INFO, PRODUCT_CATEGORIES } from "@/lib/data";
 import { formatPrice } from "@/lib/utils";
 
@@ -34,9 +41,13 @@ const portableTextComponents = {
           <table className="w-full border-collapse border border-gray-200 text-sm text-left">
             <tbody>
               {value.rows.map((row: any, rowIndex: number) => (
-                <tr 
-                  key={row._key} 
-                  className={rowIndex === 0 ? "bg-gray-100 font-bold" : "border-b border-gray-100 hover:bg-gray-50"}
+                <tr
+                  key={row._key}
+                  className={
+                    rowIndex === 0
+                      ? "bg-gray-100 font-bold"
+                      : "border-b border-gray-100 hover:bg-gray-50"
+                  }
                 >
                   {row.cells.map((cell: string, cellIndex: number) => (
                     <td key={cellIndex} className="p-4 border border-gray-200">
@@ -61,7 +72,8 @@ export default async function ProductDetailPage(props: Props) {
     notFound();
   }
 
-  const hasDiscount = product.discountPrice && product.discountPrice < product.price;
+  const hasDiscount =
+    product.discountPrice && product.discountPrice < product.price;
   const isOutOfStock = product.stock <= 0;
 
   return (
@@ -69,7 +81,10 @@ export default async function ProductDetailPage(props: Props) {
       {/* Breadcrumb */}
       <div className="container mx-auto px-4 mb-8">
         <div className="flex items-center text-sm text-gray-500 gap-2">
-          <Link href="/" className="hover:text-brand-red flex items-center gap-1">
+          <Link
+            href="/"
+            className="hover:text-brand-red flex items-center gap-1"
+          >
             <Home size={14} /> Trang chủ
           </Link>
           <ChevronRight size={14} />
@@ -86,7 +101,6 @@ export default async function ProductDetailPage(props: Props) {
       <div className="container mx-auto px-4">
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
           <div className="flex flex-col md:flex-row">
-            
             {/* Product images */}
             <div className="w-full md:w-1/2 p-6 md:p-10 border-b md:border-b-0 md:border-r border-gray-100 flex items-center justify-center bg-gray-50/50">
               <div className="relative w-full aspect-square max-w-md overflow-hidden rounded-xl shadow-sm border border-gray-100 bg-white">
@@ -102,25 +116,40 @@ export default async function ProductDetailPage(props: Props) {
                     Chưa có hình ảnh
                   </div>
                 )}
-                
+
                 {/* Discount badge */}
                 {hasDiscount && (
                   <div className="absolute top-4 left-4 z-10 bg-red-500 text-white font-bold px-3 py-1 rounded-full shadow-md">
-                    Giảm {Math.round(((product.price - product.discountPrice) / product.price) * 100)}%
+                    Giảm{" "}
+                    {Math.round(
+                      ((product.price - product.discountPrice) /
+                        product.price) *
+                        100,
+                    )}
+                    %
                   </div>
                 )}
               </div>
             </div>
 
             <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col">
-              
               {/* Category & Status */}
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">
                   {PRODUCT_CATEGORIES[product.category] || "Phụ tùng thay thế"}
                 </span>
-                <span className={`flex items-center gap-1 text-sm font-semibold ${isOutOfStock ? 'text-red-500' : 'text-green-600'}`}>
-                  {isOutOfStock ? <><XCircle size={16}/> Hết hàng</> : <><CheckCircle2 size={16}/> Còn hàng</>}
+                <span
+                  className={`flex items-center gap-1 text-sm font-semibold ${isOutOfStock ? "text-red-500" : "text-green-600"}`}
+                >
+                  {isOutOfStock ? (
+                    <>
+                      <XCircle size={16} /> Hết hàng
+                    </>
+                  ) : (
+                    <>
+                      <CheckCircle2 size={16} /> Còn hàng
+                    </>
+                  )}
                 </span>
               </div>
 
@@ -132,7 +161,10 @@ export default async function ProductDetailPage(props: Props) {
               {/* SKU */}
               {product.sku && (
                 <p className="text-sm text-gray-500 mb-6">
-                  Mã sản phẩm: <span className="font-semibold text-gray-900">{product.sku}</span>
+                  Mã sản phẩm:{" "}
+                  <span className="font-semibold text-gray-900">
+                    {product.sku}
+                  </span>
                 </p>
               )}
 
@@ -155,20 +187,21 @@ export default async function ProductDetailPage(props: Props) {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                <button 
+                <button
                   disabled={isOutOfStock}
                   className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-lg transition-all
-                    ${isOutOfStock 
-                      ? 'bg-gray-200 text-gray-400 cursor-not-allowed' 
-                      : 'bg-brand-red text-white hover:bg-red-700 shadow-lg shadow-red-500/30 hover:-translate-y-1'
+                    ${
+                      isOutOfStock
+                        ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                        : "bg-brand-red text-white hover:bg-red-700 shadow-lg shadow-red-500/30 hover:-translate-y-1"
                     }
                   `}
                 >
                   <ShoppingCart size={20} />
-                  {isOutOfStock ? 'Tạm hết hàng' : 'Thêm vào giỏ hàng'}
+                  {isOutOfStock ? "Tạm hết hàng" : "Thêm vào giỏ hàng"}
                 </button>
-                
-                <a 
+
+                <a
                   href={`tel:${CONTACT_INFO.hotline.replace(/\s/g, "")}`}
                   className="flex-1 flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-lg border-2 border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white transition-all"
                 >
@@ -179,12 +212,20 @@ export default async function ProductDetailPage(props: Props) {
 
               <div className="border-t border-gray-100 pt-6 mt-auto">
                 <ul className="space-y-3 text-sm text-gray-600">
-                  <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-green-500"/> Cam kết hàng chính hãng 100%</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-green-500"/> Hỗ trợ lắp đặt trực tiếp tại Garage</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-green-500"/> Bảo hành theo tiêu chuẩn nhà sản xuất</li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 size={16} className="text-green-500" /> Cam
+                    kết hàng chính hãng 100%
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 size={16} className="text-green-500" /> Hỗ trợ
+                    lắp đặt trực tiếp tại Garage
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 size={16} className="text-green-500" /> Bảo
+                    hành theo tiêu chuẩn nhà sản xuất
+                  </li>
                 </ul>
               </div>
-
             </div>
           </div>
         </div>
@@ -196,14 +237,13 @@ export default async function ProductDetailPage(props: Props) {
               Chi tiết sản phẩm
             </h2>
             <div className="prose prose-red max-w-none prose-img:rounded-xl prose-img:w-full prose-img:max-w-3xl prose-img:mx-auto">
-              <PortableText 
-                value={product.description} 
-                components={portableTextComponents} 
+              <PortableText
+                value={product.description}
+                components={portableTextComponents}
               />
             </div>
           </div>
         )}
-
       </div>
     </main>
   );
