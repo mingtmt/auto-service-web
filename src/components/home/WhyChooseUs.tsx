@@ -1,20 +1,23 @@
 import { WHY_CHOOSE_US } from "@/lib/data";
+import { Locale } from "@/dictionaries";
 
-export default function WhyChooseUs() {
+type Props = {
+  dict: any;
+}
+export default function WhyChooseUs(props: Props) {
   return (
     <section className="py-16 bg-brand-gray">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-brand-red font-bold text-sm md:text-base uppercase tracking-widest mb-2">
-            Giá Trị Cốt Lõi
+            {props.dict.common.coreValue}
           </h2>
           <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Tại Sao Chọn Anh Khoa Auto?
+            {props.dict.common.whyChooseUs}
           </h3>
           <p className="text-gray-600">
-            Chúng tôi không chỉ sửa xe, chúng tôi mang đến sự an tâm tuyệt đối
-            cho mọi hành trình của bạn với quy trình chuẩn 12 bước.
+            {props.dict.common.whyChooseUsDescription}
           </p>
         </div>
 

@@ -26,10 +26,10 @@ export default async function RootLayout(props: Props) {
   return (
     <html lang="vi">
       <body className={inter.className}>
-        <Header dict={dict} lang={lang as Locale} />
+        <Header dict={dict} />
         <main className="min-h-screen pt-[120px]">{props.children}</main>
         <FloatingContact />
-        <Footer dict={dict} lang={lang as Locale} />
+        <Footer dict={dict} />
       </body>
     </html>
   );

@@ -45,7 +45,7 @@ export default function FloatingContact() {
 
       {/* Zalo Button */}
       <a
-        href=""
+        href={CONTACT_INFO.zalo}
         target="_blank"
         rel="noreferrer"
         className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-blue-600 hover:scale-110 transition-all duration-300 animate-bounce-slow"

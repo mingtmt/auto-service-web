@@ -20,11 +20,9 @@ import {
   getServices,
 } from "@/lib/data";
 import { cn } from "@/lib/utils";
-import { Locale } from "@/dictionaries";
 
 type Props = {
   dict: any;
-  lang: Locale;
 };
 export default function Header(props: Props) {
   const menuItems = getMenuItems(props.dict);

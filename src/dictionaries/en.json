@@ -8,18 +8,38 @@
     "library": "Library",
     "contact": "Contact"
   },
+  "home": {
+    "hero": {
+      "ourCommitment": "Reputation - Dedication - Responsibility",
+      "titleLine1": "Professional Car Care",
+      "titleLine2": "& Maintenance",
+      "description": "Anh Khoa Auto provides comprehensive solutions for your beloved car with a team of highly experienced technicians.",
+      "btnViewServices": "View Services",
+      "btnContact": "Contact Us Now"
+    }
+  },
   "common": {
     "bookAppointment": "Book Appointment",
     "viewDetails": "View Details",
     "addToCart": "Add to Cart",
     "outOfStock": "Out of Stock",
     "search": "Search",
-    "ourServices": "Our Services"
+    "ourServices": "Our Services",
+    "coreValue": "Giá trị cốt lõi",
+    "whyChooseUs": "Tại Sao Chọn Anh Khoa Auto?",
+    "whyChooseUsDescription": "Chúng tôi không chỉ sửa xe, chúng tôi mang đến sự an tâm tuyệt đối mọi hành trình của bạn với quy trình chuẩn 12 bước.",
+    "learnMore": "Learn more"
   },
   "services": {
     "common": "Sửa chữa chung",
     "detailing": "Dịch vụ chăm sóc xe ô tô",
     "painting": "Đồng sơn ô tô",
-    "support": "Dịch vụ hỗ trỡ thêm"
+    "support": "Dịch vụ hỗ trỡ thêm",
+    "emptyState": {
+      "title": "No articles found",
+      "descPrefix": "Currently, the category ",
+      "descSuffix": " has no articles.",
+      "btnViewAll": "View all articles"
+    }
   }
 }

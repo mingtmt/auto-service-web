@@ -8,18 +8,38 @@
     "library": "Thư viện",
     "contact": "Liên hệ"
   },
+  "home": {
+    "hero": {
+      "ourCommitment": "Uy tín - Tận tâm - Trách nhiệm",
+      "titleLine1": "Chăm Sóc & Bảo Dưỡng",
+      "titleLine2": "Ô Tô Chuyên Nghiệp",
+      "description": "Anh Khoa Auto mang đến giải pháp toàn diện cho xế yêu của bạn với đội ngũ kỹ thuật viên giàu kinh nghiệm.",
+      "btnViewServices": "Xem Dịch Vụ",
+      "btnContact": "Liên Hệ Ngay"
+    }
+  },
   "common": {
     "bookAppointment": "Đặt Lịch Hẹn",
     "viewDetails": "Xem chi tiết",
     "addToCart": "Thêm vào giỏ hàng",
     "outOfStock": "Tạm hết hàng",
     "search": "Tìm kiếm",
-    "ourServices": "Dịch vụ của chúng tôi"
+    "ourServices": "Dịch vụ của chúng tôi",
+    "coreValue": "Giá trị cốt lõi",
+    "whyChooseUs": "Tại Sao Chọn Anh Khoa Auto?",
+    "whyChooseUsDescription": "Chúng tôi không chỉ sửa xe, chúng tôi mang đến sự an tâm tuyệt đối mọi hành trình của bạn với quy trình chuẩn 12 bước.",
+    "learnMore": "Xem chi tiết"
   },
   "services": {
     "common": "Sửa chữa chung",
     "detailing": "Dịch vụ chăm sóc xe ô tô",
     "painting": "Đồng sơn ô tô",
-    "support": "Dịch vụ hỗ trỡ thêm"
+    "support": "Dịch vụ hỗ trỡ thêm",
+    "emptyState": {
+      "title": "Chưa có bài viết nào",
+      "descPrefix": "Hiện tại danh mục ",
+      "descSuffix": " chưa có bài viết.",
+      "btnViewAll": "Xem tất cả bài viết"
+    }
   }
 }

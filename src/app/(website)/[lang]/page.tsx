@@ -13,7 +13,7 @@ export default async function Home(props: Props) {
   const services = getServices(dict);
   return (
     <div className="flex flex-col">
-      <HeroSlider />
+      <HeroSlider dict={dict} />
 
       <section className="bg-zinc-950 py-20">
         <div className="container mx-auto px-4">
@@ -28,6 +28,7 @@ export default async function Home(props: Props) {
             {services.map((service) => (
               <ServiceGrid
                 key={service.slug}
+                dict={dict}
                 slug={service.slug}
                 title={service.title}
                 icon={service.icon}
@@ -38,7 +39,7 @@ export default async function Home(props: Props) {
       </section>
 
       <div className="mt-12">
-        <WhyChooseUs />
+        <WhyChooseUs dict={dict} />
       </div>
     </div>
   );

@@ -4,11 +4,9 @@ import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import { SUB_SERVICES, getServices } from "@/lib/data";
-import { Locale } from "@/dictionaries";
 
 type Props = {
   dict: any;
-  lang: Locale;
 };
 
 export default function ServiceSidebarFilter(props: Props) {

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { SUB_SERVICES } from "@/lib/data";
 
 type Props = {
+  dict: any;
   slug: string;
   title: String;
   icon: LucideIcon;
@@ -56,7 +57,7 @@ export default function ServiceGrid(props: Props) {
                 href={`/services?category=${service.slug}`}
                 className="inline-flex items-center text-brand-red font-semibold text-sm hover:underline"
               >
-                Xem chi tiết <ArrowRight size={16} className="ml-1" />
+                {props.dict.common.learnMore} <ArrowRight size={16} className="ml-1" />
               </Link>
             </div>
           </div>

@@ -1,11 +1,9 @@
 import Link from "next/link";
 import { Facebook, Youtube, MapPin, Mail, Clock } from "lucide-react";
 import { BRANCHES, CONTACT_INFO, FOOTER_LINKS, getServices } from "@/lib/data";
-import { Locale } from "@/dictionaries";
 
 type Props = {
   dict: any;
-  lang: Locale;
 };
 
 export default function Footer(props: Props) {
@@ -31,7 +29,7 @@ export default function Footer(props: Props) {
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.facebook.com/khoa.do0903"
                 className="w-9 h-9 rounded bg-white/10 flex items-center justify-center hover:bg-brand-red transition-all duration-300"
               >
                 <Facebook size={18} />

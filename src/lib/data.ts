@@ -160,10 +160,11 @@ export const SUB_SERVICES = [
 ];
 
 export const CONTACT_INFO = {
-  phone: "0987 xx xx xx",
-  hotline: "0987 xx xx xx",
+  phone: "0969 46 36 38",
+  hotline: "0969 46 36 38",
+  zalo: "https://zalo.me/0969463638",
   email: "khoado@anhkhoaauto.com",
-  address: "68B Nguyễn Hữu Thọ, Tân Hưng, Q.7, TP.HCM",
+  address: "92D2 KDC SAVIMEX, P.Phú Thuận, TP.HCM",
 };
 
 export const WHY_CHOOSE_US = [
@@ -214,14 +215,9 @@ export const FOOTER_LINKS = [
 
 export const BRANCHES = [
   {
-    name: "Trụ Sở Chính (Quận 7)",
-    address: "68B Nguyễn Hữu Thọ, Phường Tân Hưng, Quận 7, TP.HCM",
+    name: "Trụ sở",
+    address: "92D2 KDC SAVIMEX, P.Phú Thuận, TP.HCM",
     mapLink: "https://maps.google.com/?q=68B+Nguyễn+Hữu+Thọ+Quận+7",
-  },
-  {
-    name: "Chi Nhánh 1 (Nhà Bè)",
-    address: "1260 Lê Văn Lương, Xã Phước Kiển, Huyện Nhà Bè, TP.HCM",
-    mapLink: "https://maps.google.com/?q=1260+Lê+Văn+Lương+Nhà+Bè",
   },
 ];
 

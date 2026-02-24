@@ -1,11 +1,9 @@
 import Link from "next/link";
 import { CONTACT_INFO, getServices } from "@/lib/data";
 import { ArrowRight, Phone } from "lucide-react";
-import { Locale } from "@/dictionaries";
 
 type Props = {
   dict: any;
-  lang: Locale;
   currentSlug: string;
 };
 export default function ServiceSidebar(props: Props) {

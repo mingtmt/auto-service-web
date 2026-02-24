@@ -75,7 +75,7 @@ export default async function ServicesPage(props: Props) {
         <div className="flex flex-col lg:flex-row gap-8 items-start">
           {/* Sidebar */}
           <aside className="w-full lg:w-1/4">
-            <ServiceFilter dict={dict} lang={lang as Locale} />
+            <ServiceFilter dict={dict} />
           </aside>
 
           {/* List posts */}
@@ -145,20 +145,20 @@ export default async function ServicesPage(props: Props) {
                   <FilterX size={40} />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  Chưa có bài viết nào
+                  {dict.services.emptyState.title}
                 </h3>
                 <p className="text-gray-500 mb-6">
-                  Hiện tại danh mục{" "}
+                  {dict.services.emptyState.descPrefix}{" "}
                   <span className="font-semibold text-brand-red">
                     {emptyCategoryName}
                   </span>{" "}
-                  chưa có bài viết.
+                  {dict.services.emptyState.descSuffix}
                 </p>
                 <Link
                   href="/services"
                   className="inline-flex bg-brand-dark text-white px-6 py-2 rounded-lg hover:bg-black transition"
                 >
-                  Xem tất cả bài viết
+                  {dict.services.emptyState.btnViewAll}
                 </Link>
               </div>
             )}

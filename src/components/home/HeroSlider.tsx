@@ -2,7 +2,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function HeroSlider() {
+type Props = {
+  dict: any;
+};
+export default function HeroSlider(props: Props) {
   return (
     <div className="relative w-full h-[500px] md:h-[600px] overflow-hidden">
       {/* Background Image - Item 1 */}
@@ -21,28 +24,27 @@ export default function HeroSlider() {
       {/* Content */}
       <div className="relative container mx-auto px-4 h-full flex items-center">
         <div className="max-w-2xl text-white space-y-6">
-          <span className="bg-brand-red px-3 py-1 text-sm font-bold rounded inline-block">
-            UY TÍN - TẬN TÂM - TRÁCH NHIỆM
+          <span className="bg-brand-red px-3 py-1 text-sm font-bold rounded inline-block uppercase">
+            {props.dict.home.hero.ourCommitment}
           </span>
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            Chăm Sóc & Bảo Dưỡng <br /> Ô Tô Chuyên Nghiệp
+            {props.dict.home.hero.titleLine1}  <br /> {props.dict.home.hero.titleLine2}
           </h1>
           <p className="text-lg md:text-xl text-gray-200">
-            Anh Khoa Auto mang đến giải pháp toàn diện cho xế yêu của bạn với
-            đội ngũ kỹ thuật viên giàu kinh nghiệm.
+            {props.dict.home.hero.description}
           </p>
           <div className="flex gap-4 pt-4">
             <Link
               href="/services"
               className="bg-brand-red hover:bg-red-700 text-white px-8 py-3 rounded font-bold transition"
             >
-              Xem Dịch Vụ
+              {props.dict.home.hero.btnViewServices}
             </Link>
             <Link
               href="/contact"
               className="bg-white hover:bg-gray-100 text-brand-dark px-8 py-3 rounded font-bold transition"
             >
-              Liên Hệ Ngay
+              {props.dict.home.hero.btnContact}
             </Link>
           </div>
         </div>

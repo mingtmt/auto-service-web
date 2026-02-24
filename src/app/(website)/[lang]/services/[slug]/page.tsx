@@ -232,7 +232,6 @@ export default async function BlogPostPage(props: Props) {
           <div className="lg:w-1/3">
             <ServiceSidebar
               dict={dict}
-              lang={lang as Locale}
               currentSlug={post.serviceSlug}
             />
           </div>
