@@ -11,9 +11,9 @@ import TableOfContents from "@/components/post/TableOfContents";
 import { getDictionary, Locale } from "@/dictionaries";
 
 type Props = {
-  params: Promise<{ 
-    lang: string, 
-    slug: string 
+  params: Promise<{
+    lang: string;
+    slug: string;
   }>;
 };
 
@@ -230,10 +230,7 @@ export default async function BlogPostPage(props: Props) {
 
           {/* Sidebar */}
           <div className="lg:w-1/3">
-            <ServiceSidebar
-              dict={dict}
-              currentSlug={post.serviceSlug}
-            />
+            <ServiceSidebar dict={dict} currentSlug={post.serviceSlug} />
           </div>
         </div>
       </div>

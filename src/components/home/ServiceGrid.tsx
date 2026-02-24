@@ -57,7 +57,8 @@ export default function ServiceGrid(props: Props) {
                 href={`/services?category=${service.slug}`}
                 className="inline-flex items-center text-brand-red font-semibold text-sm hover:underline"
               >
-                {props.dict.common.learnMore} <ArrowRight size={16} className="ml-1" />
+                {props.dict.common.viewDetails}{" "}
+                <ArrowRight size={16} className="ml-1" />
               </Link>
             </div>
           </div>

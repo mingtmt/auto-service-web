@@ -5,6 +5,7 @@ import Link from "next/link";
 type Props = {
   dict: any;
 };
+
 export default function HeroSlider(props: Props) {
   return (
     <div className="relative w-full h-[500px] md:h-[600px] overflow-hidden">
@@ -28,7 +29,8 @@ export default function HeroSlider(props: Props) {
             {props.dict.home.hero.ourCommitment}
           </span>
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            {props.dict.home.hero.titleLine1}  <br /> {props.dict.home.hero.titleLine2}
+            {props.dict.home.hero.titleLine1} <br />{" "}
+            {props.dict.home.hero.titleLine2}
           </h1>
           <p className="text-lg md:text-xl text-gray-200">
             {props.dict.home.hero.description}

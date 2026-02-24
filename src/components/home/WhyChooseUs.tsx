@@ -3,7 +3,8 @@ import { Locale } from "@/dictionaries";
 
 type Props = {
   dict: any;
-}
+};
+
 export default function WhyChooseUs(props: Props) {
   return (
     <section className="py-16 bg-brand-gray">

@@ -126,7 +126,7 @@ export const SUB_SERVICES = [
     title: "Sơn dặm vá toàn thân",
     parentSlug: "dong-son-o-to",
     description:
-      "Kỹ năng pha sơn và kỹ thuật sơn điêu luyện – không thể nhận biết vết sơn mới và cũ.",
+      "Kỹ năng pha sơn và kỹ thuật sơn điêu luyện - không thể nhận biết vết sơn mới và cũ.",
     image:
       "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80",
   },
@@ -165,6 +165,7 @@ export const CONTACT_INFO = {
   zalo: "https://zalo.me/0969463638",
   email: "khoado@anhkhoaauto.com",
   address: "92D2 KDC SAVIMEX, P.Phú Thuận, TP.HCM",
+  mapLink: "",
 };
 
 export const WHY_CHOOSE_US = [
@@ -211,14 +212,6 @@ export const FOOTER_LINKS = [
   { label: "Tuyển dụng", href: "/tuyen-dung" },
   { label: "Tin tức & Sự kiện", href: "/tin-tuc" },
   { label: "Chính sách bảo mật", href: "/chinh-sach" },
-];
-
-export const BRANCHES = [
-  {
-    name: "Trụ sở",
-    address: "92D2 KDC SAVIMEX, P.Phú Thuận, TP.HCM",
-    mapLink: "https://maps.google.com/?q=68B+Nguyễn+Hữu+Thọ+Quận+7",
-  },
 ];
 
 export const PRODUCT_CATEGORIES: Record<string, string> = {

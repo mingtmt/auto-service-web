@@ -28,7 +28,7 @@
     "coreValue": "Giá trị cốt lõi",
     "whyChooseUs": "Tại Sao Chọn Anh Khoa Auto?",
     "whyChooseUsDescription": "Chúng tôi không chỉ sửa xe, chúng tôi mang đến sự an tâm tuyệt đối mọi hành trình của bạn với quy trình chuẩn 12 bước.",
-    "learnMore": "Learn more"
+    "workingHours": "8:00 AM - 5:30 PM (Mon - Sun)"
   },
   "services": {
     "common": "Sửa chữa chung",
@@ -41,5 +41,12 @@
       "descSuffix": " has no articles.",
       "btnViewAll": "View all articles"
     }
+  },
+  "footer": {
+    "companyDescription": "Anh Khoa Auto - A pioneer in professional auto repair, maintenance, and detailing in HCMC.",
+    "garageSystem": "Garage System",
+    "mainServices": "Main Services",
+    "aboutUs": "About Us",
+    "copyright": "Anh Khoa Auto. All rights reserved."
   }
 }

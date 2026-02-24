@@ -28,7 +28,7 @@
     "coreValue": "Giá trị cốt lõi",
     "whyChooseUs": "Tại Sao Chọn Anh Khoa Auto?",
     "whyChooseUsDescription": "Chúng tôi không chỉ sửa xe, chúng tôi mang đến sự an tâm tuyệt đối mọi hành trình của bạn với quy trình chuẩn 12 bước.",
-    "learnMore": "Xem chi tiết"
+    "workingHours": "8:00 - 17:30 (Thứ 2 - Chủ Nhật)"
   },
   "services": {
     "common": "Sửa chữa chung",
@@ -41,5 +41,12 @@
       "descSuffix": " chưa có bài viết.",
       "btnViewAll": "Xem tất cả bài viết"
     }
+  },
+  "footer": {
+    "companyDescription": "Anh Khoa Auto - Đơn vị tiên phong trong lĩnh vực sửa chữa, bảo dưỡng và chăm sóc xe ô tô chuyên nghiệp tại TP.HCM.",
+    "garageSystem": "Hệ Thống Garage",
+    "mainServices": "Dịch Vụ Chính",
+    "aboutUs": "Về Chúng Tôi",
+    "copyright": "Anh Khoa Auto. Garage bảo dưỡng - Chăm sóc - Bảo trì - Sửa chữa xe ô tô uy tín, chuyên nghiệp - Sửa ô tô lưu động tại nhà ở TP.HCM."
   }
 }

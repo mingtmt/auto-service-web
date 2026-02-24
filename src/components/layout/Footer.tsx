@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Facebook, Youtube, MapPin, Mail, Clock } from "lucide-react";
-import { BRANCHES, CONTACT_INFO, FOOTER_LINKS, getServices } from "@/lib/data";
+import { CONTACT_INFO, FOOTER_LINKS, getServices } from "@/lib/data";
 
 type Props = {
   dict: any;
@@ -17,15 +17,14 @@ export default function Footer(props: Props) {
           <div>
             <div className="flex items-center gap-2 mb-6">
               <div className="w-10 h-10 bg-brand-red rounded flex items-center justify-center font-bold text-lg">
-                TP
+                AK
               </div>
               <span className="font-bold text-xl uppercase tracking-wider">
                 Anh Khoa Auto
               </span>
             </div>
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-              Anh Khoa Auto - Đơn vị tiên phong trong lĩnh vực sửa chữa, bảo
-              dưỡng và chăm sóc xe ô tô chuyên nghiệp tại TP.HCM.
+              {props.dict.footer.companyDescription}
             </p>
             <div className="flex gap-4">
               <a
@@ -46,29 +45,24 @@ export default function Footer(props: Props) {
           {/* Garage address */}
           <div>
             <h3 className="text-lg font-bold mb-6 border-l-4 border-brand-red pl-3">
-              Hệ Thống Garage
+              {props.dict.footer.garageSystem}
             </h3>
             <div className="space-y-4">
-              {BRANCHES.map((branch, idx) => (
-                <div key={idx} className="group">
-                  <h4 className="font-semibold text-brand-red text-sm mb-1">
-                    {branch.name}
-                  </h4>
-                  <a
-                    href={branch.mapLink}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-start gap-2 text-gray-400 text-sm group-hover:text-white transition-colors"
-                  >
-                    <MapPin size={16} className="mt-1 shrink-0" />
-                    <span>{branch.address}</span>
-                  </a>
-                </div>
-              ))}
+              <div>
+                <a
+                  href={CONTACT_INFO.mapLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-start gap-2 text-gray-400 text-sm group-hover:text-white transition-colors"
+                >
+                  <MapPin size={16} className="mt-1 shrink-0" />
+                  <span>{CONTACT_INFO.address}</span>
+                </a>
+              </div>
               <div className="pt-4 border-t border-white/10 mt-4">
                 <div className="flex items-center gap-2 text-gray-400 text-sm mb-2">
                   <Clock size={16} className="text-brand-red" />
-                  <span>8:00 - 17:30 (Thứ 2 - Chủ Nhật)</span>
+                  <span>{props.dict.common.workingHours}</span>
                 </div>
                 <div className="flex items-center gap-2 text-gray-400 text-sm">
                   <Mail size={16} className="text-brand-red" />
@@ -86,7 +80,7 @@ export default function Footer(props: Props) {
           {/* Main services */}
           <div>
             <h3 className="text-lg font-bold mb-6 border-l-4 border-brand-red pl-3">
-              Dịch Vụ Chính
+              {props.dict.footer.mainServices}
             </h3>
             <ul className="space-y-3">
               {services.map((service) => (
@@ -106,7 +100,7 @@ export default function Footer(props: Props) {
           {/* About us */}
           <div>
             <h3 className="text-lg font-bold mb-6 border-l-4 border-brand-red pl-3">
-              Về Chúng Tôi
+              {props.dict.footer.aboutUs}
             </h3>
             <ul className="space-y-3">
               {FOOTER_LINKS.map((link) => (
@@ -127,7 +121,7 @@ export default function Footer(props: Props) {
         {/* Copyright */}
         <div className="border-t border-white/10 pt-8 text-center text-gray-500 text-sm">
           <p>
-            © {new Date().getFullYear()} Anh Khoa Auto. All rights reserved.
+            © {new Date().getFullYear()} {props.dict.footer.copyright}
           </p>
         </div>
       </div>

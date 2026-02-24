@@ -67,12 +67,13 @@ export default function Header(props: Props) {
                 <Phone size={14} /> Hotline: {CONTACT_INFO.hotline}
               </span>
               <span className="flex items-center gap-2">
-                <Clock size={14} /> 8:00 - 17:30 (T2 - CN)
+                <Clock size={14} /> {props.dict.common.workingHours}
               </span>
             </div>
-            <div className="flex items-center gap-2">
-              <MapPin size={14} /> {CONTACT_INFO.address}
-            </div>
+            <a href={CONTACT_INFO.mapLink} className="flex items-center gap-2">
+              <MapPin size={14} />
+              {CONTACT_INFO.address}
+            </a>
           </div>
         </div>
 
