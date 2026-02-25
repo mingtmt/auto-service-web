@@ -4,6 +4,7 @@ import "../globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingContact from "@/components/layout/FloatingContact";
+import TawkToChat from "@/components/layout/TawkToChat";
 import { getDictionary, Locale } from "@/dictionaries";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -30,6 +31,7 @@ export default async function RootLayout(props: Props) {
         <main className="min-h-screen pt-[120px]">{props.children}</main>
         <FloatingContact />
         <Footer dict={dict} />
+        <TawkToChat />
       </body>
     </html>
   );
