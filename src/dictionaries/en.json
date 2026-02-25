@@ -42,6 +42,24 @@
       "btnViewAll": "View all articles"
     }
   },
+  "contact": {
+    "title": "Liên Hệ Với Chúng Tôi",
+    "subtitle": "KHOA CAR SERVICE luôn sẵn sàng hỗ trợ, tư vấn và giải đáp mọi thắc mắc của quý khách.",
+    "info": {
+      "title": "Thông Tin Liên Hệ",
+      "companyName": "CÔNG TY TNHH MTV KHOA CAR SERVICE",
+      "address": "92D2 KDC SAVIMEX, Phường Phú Thuận, TP.HCM",
+      "coreValues": "Uy Tín - Chất Lượng - Tận Tâm - Chia Sẻ"
+    },
+    "form": {
+      "title": "Gửi Yêu Cầu Tư Vấn",
+      "name": "Họ và tên",
+      "phone": "Số điện thoại",
+      "service": "Dịch vụ quan tâm",
+      "message": "Nội dung cần tư vấn",
+      "submitBtn": "Gửi Tin Nhắn"
+    }
+  },
   "footer": {
     "companyDescription": "Anh Khoa Auto - A pioneer in professional auto repair, maintenance, and detailing in HCMC.",
     "garageSystem": "Garage System",

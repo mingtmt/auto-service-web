@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Facebook, Youtube, MapPin, Mail, Clock } from "lucide-react";
+import { MapPin, Mail, Clock } from "lucide-react";
+import { FaFacebook, FaYoutube, FaTiktok } from "react-icons/fa";
 import { CONTACT_INFO, FOOTER_LINKS, getServices } from "@/lib/data";
 
 type Props = {
@@ -17,10 +18,10 @@ export default function Footer(props: Props) {
           <div>
             <div className="flex items-center gap-2 mb-6">
               <div className="w-10 h-10 bg-brand-red rounded flex items-center justify-center font-bold text-lg">
-                AK
+                KC
               </div>
               <span className="font-bold text-xl uppercase tracking-wider">
-                Anh Khoa Auto
+                Khoa Car Service
               </span>
             </div>
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
@@ -28,16 +29,22 @@ export default function Footer(props: Props) {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://www.facebook.com/khoa.do0903"
+                href="https://www.facebook.com/garage.khoacar/"
                 className="w-9 h-9 rounded bg-white/10 flex items-center justify-center hover:bg-brand-red transition-all duration-300"
               >
-                <Facebook size={18} />
+                <FaFacebook size={18} />
               </a>
               <a
                 href="#"
                 className="w-9 h-9 rounded bg-white/10 flex items-center justify-center hover:bg-brand-red transition-all duration-300"
               >
-                <Youtube size={18} />
+                <FaYoutube size={18} />
+              </a>
+              <a
+                href="https://www.tiktok.com/@khoa.car"
+                className="w-9 h-9 rounded bg-white/10 flex items-center justify-center hover:bg-brand-red transition-all duration-300"
+              >
+                <FaTiktok size={18} />
               </a>
             </div>
           </div>

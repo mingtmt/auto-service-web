@@ -4,15 +4,14 @@ import "../globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingContact from "@/components/layout/FloatingContact";
-import TawkToChat from "@/components/layout/TawkToChat";
 import { getDictionary, Locale } from "@/dictionaries";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Anh Khoa Auto - Sửa chữa, Bảo dưỡng & Chăm sóc xe chuyên nghiệp",
+  title: "Khoa Car Service",
   description:
-    "Gara uy tín tại TP.HCM chuyên bảo dưỡng, sửa chữa, đồng sơn ô tô.",
+    "Gara uy tín tại TP.HCM chuyên Bảo dưỡng - Sửa chữa - Chăm sóc, làm đẹp - Mua bán ô tô.",
 };
 
 type Props = {
@@ -31,7 +30,6 @@ export default async function RootLayout(props: Props) {
         <main className="min-h-screen pt-[120px]">{props.children}</main>
         <FloatingContact />
         <Footer dict={dict} />
-        <TawkToChat />
       </body>
     </html>
   );

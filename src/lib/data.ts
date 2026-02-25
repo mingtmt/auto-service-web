@@ -160,8 +160,8 @@ export const SUB_SERVICES = [
 ];
 
 export const CONTACT_INFO = {
-  phone: "0969 46 36 38",
-  hotline: "0969 46 36 38",
+  hotline_1: "0794 98 83 86",
+  hotline_2: "0969 46 36 38",
   zalo: "https://zalo.me/0969463638",
   email: "khoado@anhkhoaauto.com",
   address: "92D2 KDC SAVIMEX, P.Phú Thuận, TP.HCM",

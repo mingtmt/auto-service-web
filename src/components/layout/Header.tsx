@@ -64,7 +64,10 @@ export default function Header(props: Props) {
           <div className="container mx-auto px-4 flex justify-between items-center">
             <div className="flex gap-6">
               <span className="flex items-center gap-2">
-                <Phone size={14} /> Hotline: {CONTACT_INFO.hotline}
+                <Phone size={14} /> Hotline 1: {CONTACT_INFO.hotline_1}
+              </span>
+              <span className="flex items-center gap-2">
+                <Phone size={14} /> Hotline 2: {CONTACT_INFO.hotline_2}
               </span>
               <span className="flex items-center gap-2">
                 <Clock size={14} /> {props.dict.common.workingHours}
@@ -82,14 +85,14 @@ export default function Header(props: Props) {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <div className="w-12 h-12 bg-brand-red rounded flex items-center justify-center text-white font-bold text-xl">
-              AK
+              KC
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-xl uppercase text-brand-dark leading-none">
-                Anh Khoa
+                Khoa Car
               </span>
               <span className="text-sm text-gray-500 font-medium tracking-widest">
-                AUTO
+                SERVICE
               </span>
             </div>
           </Link>
@@ -303,10 +306,10 @@ export default function Header(props: Props) {
               <div>
                 <p className="text-xs text-gray-500">Hotline tư vấn</p>
                 <a
-                  href={`tel:${CONTACT_INFO.hotline.replace(/\s/g, "")}`}
+                  href={`tel:${CONTACT_INFO.hotline_1.replace(/\s/g, "")}`}
                   className="font-bold text-gray-900"
                 >
-                  {CONTACT_INFO.hotline}
+                  {CONTACT_INFO.hotline_1}
                 </a>
               </div>
             </div>

@@ -13,8 +13,8 @@ type Props = {
 };
 
 export const metadata = {
-  title: "Dịch vụ Sửa chữa Ô Tô | Anh Khoa Auto",
-  description: "Tổng hợp tất cả dịch vụ sửa chữa Ô Tô.",
+  title: "Dịch vụ sửa chữa ô tô | Khoa Car Service",
+  description: "Tổng hợp tất cả dịch vụ sửa chữa ô tô.",
 };
 
 export default async function ServicesPage(props: Props) {

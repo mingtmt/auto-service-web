@@ -7,7 +7,7 @@ import { PRODUCT_CATEGORIES } from "@/lib/data";
 import { formatPrice } from "@/lib/utils";
 
 export const metadata = {
-  title: "Phụ Tùng & Phụ Kiện | Anh Khoa Auto",
+  title: "Phụ Tùng & Phụ Kiện | Khoa Car Service",
   description: "Cung cấp phụ tùng, đồ chơi xe hơi chính hãng.",
 };
 

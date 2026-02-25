@@ -56,12 +56,12 @@ export default function FloatingContact() {
 
       {/* Phone Button */}
       <a
-        href={`tel:${CONTACT_INFO.hotline.replace(/\s/g, "")}`}
+        href={`tel:${CONTACT_INFO.hotline_1.replace(/\s/g, "")}`}
         className="group relative flex items-center justify-end"
       >
         {/* Tooltip text */}
         <span className="absolute right-14 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-          Gọi ngay: {CONTACT_INFO.hotline}
+          Gọi ngay: {CONTACT_INFO.hotline_1}
         </span>
 
         {/* Icon */}
