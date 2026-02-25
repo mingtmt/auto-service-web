@@ -140,7 +140,7 @@ export const SUB_SERVICES = [
       "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80",
   },
   {
-    slug: "dich-vu-cuu-ho-24-7-bao-hiem-xe",
+    slug: "dich-vu-cuu-ho-247-bao-hiem-xe",
     title: "Dịch vụ cứu hộ 24/7 - Bảo hiểm xe",
     parentSlug: "dich-vu-ho-tro-them",
     description:

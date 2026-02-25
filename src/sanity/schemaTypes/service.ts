@@ -21,13 +21,33 @@ export default defineType({
       },
       validation: (Rule) => Rule.required(),
     }),
-    defineField({
-      name: "serviceSlug",
-      title: "Thuộc chuyên mục dịch vụ (Slug)",
+    {
+      name: "category",
+      title: "Chuyên mục dịch vụ",
+      description: "Chọn một danh mục phù hợp cho bài viết này",
       type: "string",
-      description:
-        "Nhập chính xác slug của dịch vụ (VD: bao-duong-dinh-ky, sua-chua-chung)",
-    }),
+      options: {
+        list: [
+          { title: "Bảo dưỡng định kỳ", value: "bao-duong-dinh-ky" },
+          { title: "Sửa chữa điện lạnh", value: "sua-chua-dien-lanh" },
+          { title: "Sửa chữa, bảo trì máy gầm", value: "sua-chua-bao-tri-may-gam" },
+          { title: "Bảo dưỡng, vệ sinh nội thất", value: "bao-duong-ve-sinh-noi-that" },
+          { title: "Bảo dưỡng khoang động cơ", value: "bao-duong-khoang-dong-co" },
+          { title: "Chăm sóc trọn gói nội thất", value: "cham-soc-tron-goi-noi-that" },
+          { title: "Chăm sóc ngoại thất", value: "cham-soc-ngoai-that" },
+          { title: "Chăm sóc khoang máy", value: "cham-soc-khoang-may" },
+          { title: "Vệ sinh bảo dưỡng phanh - thắng", value: "ve-sinh-bao-duong-phanh-thang" },
+          { title: "Sơn dặm vá toàn thân", value: "son-dam-va-toan-than" },
+          { title: "Sửa chữa đồng", value: "sua-chua-dong" },
+          { title: "Dịch vụ cứu hộ 24/7 - Bảo hiểm xe", value: "dich-vu-cuu-ho-247-bao-hiem-xe" },
+          { title: "Sửa chữa ô tô lưu động tại nhà", value: "sua-chua-o-to-luu-dong-tai-nha" },
+        ],
+        layout: "dropdown",
+      },
+      initialValue: "bao-duong-dinh-ky",
+      validation: (Rule) =>
+        Rule.required().error("Vui lòng chọn chuyên mục dịch vụ!"),
+    },
     defineField({
       name: "excerpt",
       title: "Mô tả ngắn",
@@ -96,12 +116,13 @@ export default defineType({
       name: "author",
       title: "Tác giả",
       type: "string",
-      initialValue: "Anh Khoa Auto",
+      initialValue: "Khoa Car Service",
     }),
     defineField({
       name: "publishedAt",
       title: "Ngày đăng",
-      description: 'Chọn ngày giờ trong tương lai để lên lịch. Nếu để trống, bài viết sẽ đăng ngay lập tức.',
+      description:
+        "Chọn ngày giờ trong tương lai để lên lịch. Nếu để trống, bài viết sẽ đăng ngay lập tức.",
       type: "datetime",
       initialValue: () => new Date().toISOString(),
     }),

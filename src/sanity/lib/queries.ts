@@ -41,11 +41,11 @@ export async function getAllPosts(): Promise<Service[]> {
   );
 }
 
-export async function getPostsByService(
-  serviceSlug: string,
+export async function getPostsByCategory(
+  category: string,
 ): Promise<Service[]> {
   return client.fetch(
-    groq`*[_type == "post" && serviceSlug == $serviceSlug && defined(publishedAt) && publishedAt <= now()] | order(publishedAt desc) {
+    groq`*[_type == "post" && category == $category && defined(publishedAt) && publishedAt <= now()] | order(publishedAt desc) {
       _id,
       title,
       slug,
@@ -54,7 +54,7 @@ export async function getPostsByService(
       author,
       publishedAt
     }`,
-    { serviceSlug },
+    { category },
   );
 }
 

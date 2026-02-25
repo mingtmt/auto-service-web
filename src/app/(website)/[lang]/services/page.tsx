@@ -1,5 +1,5 @@
 import { SUB_SERVICES, getServices } from "@/lib/data";
-import { getAllPosts, getPostsByService } from "@/sanity/lib/queries";
+import { getAllPosts, getPostsByCategory } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 import Link from "next/link";
 import Image from "next/image";
@@ -55,7 +55,7 @@ export default async function ServicesPage(props: Props) {
       pageTitle = subService.title;
       emptyCategoryName = subService.title;
 
-      posts = await getPostsByService(currentCategory);
+      posts = await getPostsByCategory(currentCategory);
     }
   }
 

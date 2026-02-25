@@ -47,11 +47,15 @@ export default async function ContactPage({ params }: Props) {
               {/* Services */}
               <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
                 <p className="text-sm text-gray-700 leading-relaxed font-medium">
-                  <span className="font-bold text-brand-dark">DỊCH VỤ:</span> Bảo dưỡng - Sửa chữa - Chăm sóc, làm đẹp - Mua bán ô tô
+                  <span className="font-bold text-brand-dark">DỊCH VỤ:</span>{" "}
+                  Bảo dưỡng - Sửa chữa - Chăm sóc, làm đẹp - Mua bán ô tô
                 </p>
                 <hr className="my-2 border-gray-200" />
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  <span className="font-bold text-brand-dark">CHUYÊN:</span> Đại tu - Sửa chữa - Bảo dưỡng - Bảo Hiểm - Đồng Sơn - Chăm sóc xe - Mua bán <br/> Máy - Gầm - Hộp số - Hệ thống điện - Điện lạnh
+                  <span className="font-bold text-brand-dark">CHUYÊN:</span> Đại
+                  tu - Sửa chữa - Bảo dưỡng - Bảo Hiểm - Đồng Sơn - Chăm sóc xe
+                  - Mua bán <br /> Máy - Gầm - Hộp số - Hệ thống điện - Điện
+                  lạnh
                 </p>
               </div>
 
@@ -63,7 +67,9 @@ export default async function ContactPage({ params }: Props) {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 mb-1">Địa chỉ Garage</p>
-                    <p className="font-medium text-gray-900">{dict.contact.info.address}</p>
+                    <p className="font-medium text-gray-900">
+                      {dict.contact.info.address}
+                    </p>
                   </div>
                 </div>
 
@@ -74,8 +80,18 @@ export default async function ContactPage({ params }: Props) {
                   <div>
                     <p className="text-sm text-gray-500 mb-1">Hotline Hỗ Trợ</p>
                     <div className="flex flex-col gap-1">
-                      <a href="tel:0794988386" className="font-bold text-lg text-gray-900 hover:text-brand-red transition">0794 98 83 86</a>
-                      <a href="tel:0969463638" className="font-bold text-lg text-gray-900 hover:text-brand-red transition">0969 46 36 38</a>
+                      <a
+                        href="tel:0794988386"
+                        className="font-bold text-lg text-gray-900 hover:text-brand-red transition"
+                      >
+                        0794 98 83 86
+                      </a>
+                      <a
+                        href="tel:0969463638"
+                        className="font-bold text-lg text-gray-900 hover:text-brand-red transition"
+                      >
+                        0969 46 36 38
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -83,15 +99,32 @@ export default async function ContactPage({ params }: Props) {
 
               {/* Socials */}
               <div className="pt-6 border-t border-gray-100">
-                <p className="text-sm text-gray-500 mb-4">Kết nối với chúng tôi</p>
+                <p className="text-sm text-gray-500 mb-4">
+                  Kết nối với chúng tôi
+                </p>
                 <div className="flex gap-4">
-                  <a href="https://www.facebook.com/garage.khoacar/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
+                  <a
+                    href="https://www.facebook.com/garage.khoacar/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition"
+                  >
                     <FaFacebook size={20} />
                   </a>
-                  <a href="https://www.tiktok.com/@khoa.car" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-black/5 text-black flex items-center justify-center hover:bg-black hover:text-white transition">
+                  <a
+                    href="https://www.tiktok.com/@khoa.car"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-10 h-10 rounded-full bg-black/5 text-black flex items-center justify-center hover:bg-black hover:text-white transition"
+                  >
                     <FaTiktok size={20} />
                   </a>
-                  <a href="#" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-red-50 text-red-600 flex items-center justify-center hover:bg-red-600 hover:text-white transition">
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-10 h-10 rounded-full bg-red-50 text-red-600 flex items-center justify-center hover:bg-red-600 hover:text-white transition"
+                  >
                     <FaYoutube size={20} />
                   </a>
                 </div>
@@ -109,9 +142,9 @@ export default async function ContactPage({ params }: Props) {
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   {dict.contact.form.name} *
                 </label>
-                <input 
-                  type="text" 
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-brand-red outline-none transition" 
+                <input
+                  type="text"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-brand-red outline-none transition"
                   placeholder="Nhập họ và tên của bạn"
                 />
               </div>
@@ -119,9 +152,9 @@ export default async function ContactPage({ params }: Props) {
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   {dict.contact.form.phone} *
                 </label>
-                <input 
-                  type="tel" 
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-brand-red outline-none transition" 
+                <input
+                  type="tel"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-brand-red outline-none transition"
                   placeholder="Nhập số điện thoại"
                 />
               </div>
@@ -141,14 +174,14 @@ export default async function ContactPage({ params }: Props) {
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   {dict.contact.form.message}
                 </label>
-                <textarea 
+                <textarea
                   rows={4}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-brand-red outline-none transition resize-none" 
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-red focus:border-brand-red outline-none transition resize-none"
                   placeholder="Mô tả tình trạng xe hoặc yêu cầu của bạn..."
                 ></textarea>
               </div>
-              <button 
-                type="button" 
+              <button
+                type="button"
                 className="w-full bg-brand-red hover:bg-red-700 text-white font-bold py-4 rounded-lg transition-colors text-lg"
               >
                 {dict.contact.form.submitBtn}
@@ -159,13 +192,13 @@ export default async function ContactPage({ params }: Props) {
 
         {/* Google Maps */}
         <div className="mt-12 rounded-2xl overflow-hidden shadow-sm border border-gray-100 h-[400px]">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.038165516769!2d106.7337373!3d10.731518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQzJzUzLjUiTiAxMDbCsDQ0JzAxLjUiRQ!5e0!3m2!1svi!2s!4v1610000000000!5m2!1svi!2s" 
-            width="100%" 
-            height="100%" 
-            style={{ border: 0 }} 
-            allowFullScreen={true} 
-            loading="lazy" 
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.038165516769!2d106.7337373!3d10.731518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQzJzUzLjUiTiAxMDbCsDQ0JzAxLjUiRQ!5e0!3m2!1svi!2s!4v1610000000000!5m2!1svi!2s"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen={true}
+            loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
