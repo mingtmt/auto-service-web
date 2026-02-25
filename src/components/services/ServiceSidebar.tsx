@@ -42,11 +42,11 @@ export default function ServiceSidebar(props: Props) {
         </p>
 
         <a
-          href={`tel:${CONTACT_INFO.hotline.replace(/\s/g, "")}`}
+          href={`tel:${CONTACT_INFO.hotline_1.replace(/\s/g, "")}`}
           className="flex items-center justify-center gap-2 bg-brand-red hover:bg-red-700 text-white py-3 px-4 rounded-lg font-bold transition mb-4"
         >
           <Phone size={20} />
-          {CONTACT_INFO.hotline}
+          {CONTACT_INFO.hotline_1}
         </a>
 
         <div className="text-sm text-gray-500">

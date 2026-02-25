@@ -202,7 +202,7 @@ export default async function ProductDetailPage(props: Props) {
                 </button>
 
                 <a
-                  href={`tel:${CONTACT_INFO.hotline.replace(/\s/g, "")}`}
+                  href={`tel:${CONTACT_INFO.hotline_1.replace(/\s/g, "")}`}
                   className="flex-1 flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-lg border-2 border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white transition-all"
                 >
                   <Phone size={20} />
