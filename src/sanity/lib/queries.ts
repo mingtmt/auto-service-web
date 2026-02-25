@@ -28,7 +28,7 @@ export interface Product {
 
 export async function getAllPosts(): Promise<Service[]> {
   return client.fetch(
-    groq`*[_type == "post"] | order(publishedAt desc) {
+    groq`*[_type == "post" && defined(publishedAt) && publishedAt <= now()] | order(publishedAt desc) {
       _id,
       title,
       slug,
@@ -45,7 +45,7 @@ export async function getPostsByService(
   serviceSlug: string,
 ): Promise<Service[]> {
   return client.fetch(
-    groq`*[_type == "post" && serviceSlug == $serviceSlug] | order(publishedAt desc) {
+    groq`*[_type == "post" && serviceSlug == $serviceSlug && defined(publishedAt) && publishedAt <= now()] | order(publishedAt desc) {
       _id,
       title,
       slug,

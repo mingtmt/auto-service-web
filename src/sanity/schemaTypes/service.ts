@@ -101,6 +101,7 @@ export default defineType({
     defineField({
       name: "publishedAt",
       title: "Ngày đăng",
+      description: 'Chọn ngày giờ trong tương lai để lên lịch. Nếu để trống, bài viết sẽ đăng ngay lập tức.',
       type: "datetime",
       initialValue: () => new Date().toISOString(),
     }),
