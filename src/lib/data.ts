@@ -164,7 +164,7 @@ export const CONTACT_INFO = {
   hotline_2: "0969 46 36 38",
   zalo: "https://zalo.me/0969463638",
   email: "khoado@anhkhoaauto.com",
-  address: "92D2 KDC SAVIMEX, P.Phú Thuận, TP.HCM",
+  address: "92D12D Savimex, Phường Phú Thuận, TPHCM",
   mapLink: "",
 };
 

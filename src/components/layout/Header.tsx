@@ -11,6 +11,7 @@ import {
   X,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
@@ -84,8 +85,14 @@ export default function Header(props: Props) {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-12 h-12 bg-brand-red rounded flex items-center justify-center text-white font-bold text-xl">
-              KC
+            <div className="relative w-30 h-16">
+              <Image
+                src="/logo.png"
+                alt="Khoa Car Service Logo"
+                fill
+                priority
+                className="object-contain object-left group-hover:scale-105 transition-transform duration-300"
+              />
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-xl uppercase text-brand-dark leading-none">

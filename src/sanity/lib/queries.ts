@@ -41,9 +41,7 @@ export async function getAllPosts(): Promise<Service[]> {
   );
 }
 
-export async function getPostsByCategory(
-  category: string,
-): Promise<Service[]> {
+export async function getPostsByCategory(category: string): Promise<Service[]> {
   return client.fetch(
     groq`*[_type == "post" && category == $category && defined(publishedAt) && publishedAt <= now()] | order(publishedAt desc) {
       _id,
