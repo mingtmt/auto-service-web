@@ -29,19 +29,19 @@ export default function Footer(props: Props) {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://www.facebook.com/garage.khoacar/"
+                href={CONTACT_INFO.social.facebook}
                 className="w-9 h-9 rounded bg-white/10 flex items-center justify-center hover:bg-brand-red transition-all duration-300"
               >
                 <FaFacebook size={18} />
               </a>
               <a
-                href="#"
+                href={CONTACT_INFO.social.youtube}
                 className="w-9 h-9 rounded bg-white/10 flex items-center justify-center hover:bg-brand-red transition-all duration-300"
               >
                 <FaYoutube size={18} />
               </a>
               <a
-                href="https://www.tiktok.com/@khoa.car"
+                href={CONTACT_INFO.social.tiktok}
                 className="w-9 h-9 rounded bg-white/10 flex items-center justify-center hover:bg-brand-red transition-all duration-300"
               >
                 <FaTiktok size={18} />

@@ -166,6 +166,11 @@ export const CONTACT_INFO = {
   email: "khoacarservice@gmail.com",
   address: "92D12D Savimex, Phường Phú Thuận, TPHCM",
   mapLink: "https://maps.app.goo.gl/CRfxRdBsWASu58169",
+  social: {
+    facebook: "https://www.facebook.com/garage.khoacar/",
+    youtube: "https://www.youtube.com/@KhoaCarService",
+    tiktok: "https://www.youtube.com/@KhoaCarService",
+  },
 };
 
 export const WHY_CHOOSE_US = [
