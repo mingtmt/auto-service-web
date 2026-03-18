@@ -162,10 +162,10 @@ export const SUB_SERVICES = [
 export const CONTACT_INFO = {
   hotline_1: "0794 98 83 86",
   hotline_2: "0969 46 36 38",
-  zalo: "https://zalo.me/0969463638",
-  email: "khoado@anhkhoaauto.com",
+  zalo: "https://zalo.me/0794988386",
+  email: "khoacarservice@gmail.com",
   address: "92D12D Savimex, Phường Phú Thuận, TPHCM",
-  mapLink: "",
+  mapLink: "https://maps.app.goo.gl/CRfxRdBsWASu58169",
 };
 
 export const WHY_CHOOSE_US = [
