@@ -169,7 +169,7 @@ export const CONTACT_INFO = {
   social: {
     facebook: "https://www.facebook.com/garage.khoacar/",
     youtube: "https://www.youtube.com/@KhoaCarService",
-    tiktok: "https://www.youtube.com/@KhoaCarService",
+    tiktok: "https://www.tiktok.com/@khoa.car",
   },
 };
 

@@ -1,6 +1,7 @@
 import { getDictionary, Locale } from "@/dictionaries";
 import { MapPin, Phone, CheckCircle2 } from "lucide-react";
 import { FaFacebook, FaYoutube, FaTiktok } from "react-icons/fa";
+import { CONTACT_INFO } from "@/lib/data";
 
 type Props = {
   params: Promise<{ lang: string }>;
@@ -104,7 +105,7 @@ export default async function ContactPage({ params }: Props) {
                 </p>
                 <div className="flex gap-4">
                   <a
-                    href="https://www.facebook.com/garage.khoacar/"
+                    href={CONTACT_INFO.social.facebook}
                     target="_blank"
                     rel="noreferrer"
                     className="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition"
@@ -112,20 +113,20 @@ export default async function ContactPage({ params }: Props) {
                     <FaFacebook size={20} />
                   </a>
                   <a
-                    href="https://www.tiktok.com/@khoa.car"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-10 h-10 rounded-full bg-black/5 text-black flex items-center justify-center hover:bg-black hover:text-white transition"
-                  >
-                    <FaTiktok size={20} />
-                  </a>
-                  <a
-                    href="#"
+                    href={CONTACT_INFO.social.youtube}
                     target="_blank"
                     rel="noreferrer"
                     className="w-10 h-10 rounded-full bg-red-50 text-red-600 flex items-center justify-center hover:bg-red-600 hover:text-white transition"
                   >
                     <FaYoutube size={20} />
+                  </a>
+                  <a
+                    href={CONTACT_INFO.social.tiktok}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-10 h-10 rounded-full bg-black/5 text-black flex items-center justify-center hover:bg-black hover:text-white transition"
+                  >
+                    <FaTiktok size={20} />
                   </a>
                 </div>
               </div>
@@ -193,7 +194,7 @@ export default async function ContactPage({ params }: Props) {
         {/* Google Maps */}
         <div className="mt-12 rounded-2xl overflow-hidden shadow-sm border border-gray-100 h-[400px]">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.038165516769!2d106.7337373!3d10.731518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQzJzUzLjUiTiAxMDbCsDQ0JzAxLjUiRQ!5e0!3m2!1svi!2s!4v1610000000000!5m2!1svi!2s"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.102099600915!2d106.7339507109062!3d10.726608060065988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317525e2277f02c7%3A0x7a9bd40c787a0b41!2sGarage%20Khoa%20Car%20Service!5e0!3m2!1svi!2s!4v1773831533591!5m2!1svi!2s"
             width="100%"
             height="100%"
             style={{ border: 0 }}
