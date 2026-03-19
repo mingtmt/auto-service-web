@@ -30,10 +30,10 @@ export interface Event {
   _id: string;
   title: string;
   slug: string;
-  coverImage;
-  startDate;
-  endDate;
-  content;
+  coverImage: any;
+  startDate: string;
+  endDate: string;
+  content: any;
 }
 
 // Service query
