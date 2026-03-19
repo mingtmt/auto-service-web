@@ -26,6 +26,17 @@ export interface Product {
   description: any;
 }
 
+export interface Event {
+  _id: string;
+  title: string;
+  slug: string;
+  coverImage;
+  startDate;
+  endDate;
+  content;
+}
+
+// Service query
 export async function getAllPosts(): Promise<Service[]> {
   return client.fetch(
     groq`*[_type == "post" && defined(publishedAt) && publishedAt <= now()] | order(publishedAt desc) {
@@ -72,6 +83,7 @@ export async function getPostBySlug(slug: string): Promise<Service> {
   );
 }
 
+// Product query
 export async function getAllProducts(): Promise<Product[]> {
   return client.fetch(
     groq`*[_type == "product"] | order(_createdAt desc) {
@@ -101,6 +113,35 @@ export async function getProductBySlug(slug: string): Promise<Product> {
       category,
       mainImage,
       description
+    }`,
+    { slug },
+  );
+}
+
+// Event query
+export async function getEvents(): Promise<Event[]> {
+  return client.fetch(
+    groq`*[_type == "event" && isActive == true] | order(startDate desc) {
+      _id,
+      title,
+      "slug": slug.current,
+      coverImage,
+      startDate,
+      endDate,
+      excerpt
+    }`,
+  );
+}
+
+export async function getEventBySlug(slug: string): Promise<Event> {
+  return client.fetch(
+    groq`*[_type == "event" && slug.current == $slug][0] {
+      _id,
+      title,
+      coverImage,
+      startDate,
+      endDate,
+      content
     }`,
     { slug },
   );

@@ -19,6 +19,7 @@ export const getMenuItems = (dict: any) => [
   { label: dict.navigation.training, href: "/training" },
   { label: dict.navigation.library, href: "/library" },
   { label: dict.navigation.contact, href: "/contact" },
+  { label: dict.navigation.event, href: "/events" },
 ];
 
 export const getServices = (dict: any) => [
@@ -213,7 +214,7 @@ export const WHY_CHOOSE_US = [
 ];
 
 export const FOOTER_LINKS = [
-  { label: "Về Anh Khoa Auto", href: "/about" },
+  { label: "Về Khoa Car Service", href: "/about" },
   { label: "Tuyển dụng", href: "/tuyen-dung" },
   { label: "Tin tức & Sự kiện", href: "/tin-tuc" },
   { label: "Chính sách bảo mật", href: "/chinh-sach" },
