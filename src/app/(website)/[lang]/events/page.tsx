@@ -44,7 +44,7 @@ export default async function EventsPage() {
                       src={urlFor(event.coverImage).url()}
                       alt={event.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-contain group-hover:scale-105 transition-transform duration-500"
                     />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center text-gray-400">

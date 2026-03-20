@@ -21,7 +21,7 @@ const portableTextComponents = {
             src={urlFor(value).url()}
             alt="Hình ảnh bài viết"
             fill
-            className="object-cover"
+            className="object-contain"
           />
         </div>
       );
@@ -87,7 +87,7 @@ export default async function EventDetailPage({ params }: Props) {
                 alt={event.title}
                 fill
                 priority
-                className="object-cover"
+                className="object-contain"
               />
             </div>
           )}
